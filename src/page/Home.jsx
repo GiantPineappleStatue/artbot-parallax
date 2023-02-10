@@ -108,6 +108,7 @@ function Home() {
   }, [targetSection, currentSection, scrollContainer]);
 
   return (
+    <div className="App">
     <div className="container" ref={setScrollContainer}>
       {scrollContainer && (
         <ParallaxProvider scrollContainer={scrollContainer}>
@@ -124,6 +125,7 @@ function Home() {
           </div>
         </ParallaxProvider>
       )}
+    </div>
     </div>
   );
 }
