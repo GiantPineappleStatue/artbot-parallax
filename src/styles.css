@@ -70,10 +70,11 @@
   }
   
   .card {
-    background-color: rgba(20, 12, 36, 0.95);
+    background-color: rgba(0,0,0,.25);
     padding: 2rem 2rem;
     border-radius: 1rem;
     color: white;
+    border-color: transparent;
   }
   
   .sections {
@@ -96,7 +97,7 @@
   
   .mountains {
     position: absolute;
-    top: 0;
+    top: 80vh;
     left: 0;
     right: 0;
     height: 500vh;
