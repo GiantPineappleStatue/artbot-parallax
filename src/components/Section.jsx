@@ -7,7 +7,7 @@ const Section = (props) => {
   return (
     <section
       className="section center-content background"
-      style={{ backgroundImage: `url(../../public/images/${props.index}.png)` }}
+      style={{ backgroundImage: `url(/images/${props.index}.png)` }}
       ref={props.registerSection(props.index)}
     >
       <Parallax speed={25}>

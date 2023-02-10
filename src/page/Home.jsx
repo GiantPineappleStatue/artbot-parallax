@@ -108,12 +108,11 @@ function Home() {
   }, [targetSection, currentSection, scrollContainer]);
 
   return (
-    <div className="App">
     <div className="container" ref={setScrollContainer}>
       {scrollContainer && (
         <ParallaxProvider scrollContainer={scrollContainer}>
           <ParallaxBanner className="mountains">
-            <ParallaxBannerLayer image="/images/mid.svg" speed={20} />
+            <ParallaxBannerLayer image="/images/mid.svg" speed={15} />
           </ParallaxBanner>
           <Menu currentSection={targetSection} setSection={setTargetSection} />
           <div className="sections">
@@ -125,7 +124,6 @@ function Home() {
           </div>
         </ParallaxProvider>
       )}
-    </div>
     </div>
   );
 }
