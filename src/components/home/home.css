@@ -1,0 +1,203 @@
+.homeWrapper {
+    scroll-snap-type: y mandatory;
+    height: 100vh;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+}
+
+.homeWrapper::-webkit-scrollbar {
+    display: none;
+}
+
+.homeWrapper>div:not(:first-child),
+.homeWrapper>div:not(:last-child) {
+    scroll-snap-align: center;
+}
+
+#hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.homeSectionIntro {
+    color: white;
+}
+
+.homeIntroHead {
+    font-family: 'Rubik';
+    font-weight: 700;
+    font-size: 64px;
+    text-align: center;
+    color: #F8F5FF;
+    text-shadow: 0px 1px 15px rgba(128, 65, 255, 0.4);
+}
+
+.homeIntroDesc {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    text-align: center;
+    color: #F8F5FF;
+    text-shadow: 0px 1px 15px rgba(128, 65, 255, 0.4);
+}
+
+.scrollBtnWrapper {
+    width: 40px;
+    height: 40px;
+    background: #5CD3FF;
+    border: 2px solid #377F99;
+    box-shadow: 4px 4px 0px #327B96;
+    border-radius: 8px;
+    margin: auto;
+    padding: 0.5%;
+    color: #000;
+    cursor: pointer;
+}
+
+.scrollBtnWrapper p,
+.scrollBtnWrapper svg {
+    cursor: pointer;
+}
+
+.hillImg {
+    width: 100%;
+}
+
+.homeCarosalWrapper {
+    padding: 100px 0;
+    margin-top: 1.6rem;
+    /* background-image: url('../../assets/mountain.svg'); */
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.react-multi-carousel-list {
+    width: 650px;
+}
+
+.react-multiple-carousel__arrow {
+    background: #a8ff4f !important;
+    box-shadow: 0px 1px 30px rgb(144 228 13 / 35%), 3px 1px 0px #5d9623;
+    border: 2px solid #86CC3F !important;
+}
+
+.react-multiple-carousel__arrow::before {
+    color: #000 !important;
+}
+
+.customCard {
+    max-width: 500px;
+    margin: 0 auto;
+    background: #140c24;
+    border: 0.5px solid #8855f3;
+    border-radius: 15px;
+}
+
+.customCardTitle {
+    font-weight: 700;
+    font-size: 1.4rem;
+    line-height: 30px;
+    color: white;
+}
+
+.customCardDesc {
+    line-height: 22px;
+    opacity: .5;
+    color: white;
+}
+
+.customCardImg {
+    object-fit: cover;
+    width: 100%;
+    height: 281.25px;
+    border-radius: 15px 15px 0 0;
+}
+
+.homeSectionWrapper {
+    margin-top: 2rem;
+}
+
+@media screen and (max-width: 1440px) {
+    .customCard {
+        max-width: 300px;
+    }
+
+    .customCardImg {
+        height: 168.75px;
+    }
+
+    .homeIntroHead {
+        font-size: 48px;
+    }
+
+    .homeIntroDesc {
+        font-size: 20px;
+        margin-bottom: 0 !important;
+    }
+
+    .customCardTitle {
+        margin-bottom: 0 !important;
+        font-size: 18px;
+    }
+
+    .customCardDesc {
+        font-size: 14px;
+        margin-bottom: 0 !important;
+    }
+}
+
+@media screen and (max-width: 1367px) {
+    #hero {
+        height: auto;
+    }
+
+    .homeCarosalWrapper {
+        padding: 50px 0;
+    }
+}
+
+@media screen and (max-width: 1023px) {
+    .homeIntroHead {
+        font-weight: 600;
+        font-size: 32px;
+        letter-spacing: 0.005em;
+        text-transform: capitalize;
+    }
+
+    .homeIntroDesc {
+        font-weight: 400;
+        font-size: 16px;
+        text-align: center;
+        text-shadow: 0px 1px 15px rgba(128, 65, 255, 0.4);
+    }
+
+    .homeCarosalWrapper {
+        padding: 80px 0;
+        left: 0;
+        width: 100%;
+    }
+
+    .customCard {
+        width: 320px;
+    }
+
+    .customCardImg {
+        height: 180px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .homeSectionWrapper {
+        margin-top: 4rem;
+    }
+
+    .homeCarosalWrapper {
+        background-image: url('../../assets/hill2.png');
+    }
+
+    #hero {
+        height: 100vh;
+    }
+}
