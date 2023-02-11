@@ -1,10 +1,10 @@
-import React from 'react'
-import MenuItem from './MenuItem'
-import './menu.css'
+import React from 'react';
+import MenuItem from './MenuItem';
+import './menu.css';
 
 export const Menu = (props) => {
   return (
-    <ul className="menu movie__radio__wrapper">
+    <div className="movie__radio__wrapper">
       {new Array(6).fill(null).map((_, index) => (
         <MenuItem
           key={index}
@@ -13,8 +13,8 @@ export const Menu = (props) => {
           onClick={() => props.setSection(index)}
         />
       ))}
-    </ul>
+    </div>
   );
 };
 
-export default Menu
+export default Menu;

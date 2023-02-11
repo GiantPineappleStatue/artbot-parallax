@@ -1,14 +1,18 @@
-import React from 'react'
+import React from 'react';
 
 export const MenuItem = (props) => {
-  return (
-    <li
+  return props.index === 0 ? (
+    <p onClick={props.onClick} className={`movie__home`}>
+      <i className="fa fa-home"></i>
+    </p>
+  ) : (
+    <p
       onClick={props.onClick}
-      className={`movie__radio menu-item ${props.active ? "menu-item--active" : ""}`}
+      className={`movie__radio ${props.active && 'active'}`}
     >
-      {/* {props.index} */}
-    </li>
+      <p></p>
+    </p>
   );
 };
 
-export default MenuItem
+export default MenuItem;
