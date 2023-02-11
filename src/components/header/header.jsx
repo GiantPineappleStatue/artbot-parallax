@@ -50,11 +50,11 @@ function Header() {
                                     </div>
                                 </div>
                             </div>
-                            <div className="res">
+                            {/* <div className="res">
                                 <div className="headerContactWrapper">
                                     <i className="fa-solid fa-user headerContactIcon"></i>
                                 </div>
-                            </div>
+                            </div> */}
                         </Col>
                     </Row>
                 </Container>

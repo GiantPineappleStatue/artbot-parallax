@@ -4,7 +4,7 @@ export const MenuItem = (props) => {
   return (
     <li
       onClick={props.onClick}
-      className={`menu-item ${props.active ? "menu-item--active" : ""}`}
+      className={`movie__radio menu-item ${props.active ? "menu-item--active" : ""}`}
     >
       {/* {props.index} */}
     </li>
