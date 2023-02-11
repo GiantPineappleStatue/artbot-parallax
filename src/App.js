@@ -1,19 +1,19 @@
 
-// import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./page/Home";
 
 function App() {
   return (
-        // <BrowserRouter>
-        //     <Routes>
-        //         <Route exact path={'/'} element={Home} />
-        //     </Routes>
-        // </BrowserRouter>
-        <div className="App">
+        <BrowserRouter>
+            <Routes>
+                <Route exact path={'/'} element={<Home />} />
+            </Routes>
+        </BrowserRouter>
 
-          <Home />
-        </div>
+
+          // <Home />
+
   );
 }
 

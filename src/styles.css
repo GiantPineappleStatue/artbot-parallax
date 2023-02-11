@@ -17,7 +17,7 @@
     padding: 0;
   }
   
-  .container {
+  .appContainer {
     position: absolute;
     overflow: auto;
     top: 0;
@@ -44,7 +44,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 1rem;
+    margin-bottom: 3rem;
   }
   
   .menu-item--active {
@@ -63,14 +63,15 @@
     padding-right: 2em;
   }
   
+  
   .background {
     background-size: auto 100vh;
     background-repeat: no-repeat;
     image-rendering: pixelated;
   }
   
-  .card {
-    background-color: rgba(0,0,0,.25);
+  .slidecard {
+    background-color: rgba(0, 0, 0, 0.4);
     padding: 2rem 2rem;
     border-radius: 1rem;
     color: white;

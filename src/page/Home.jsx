@@ -8,8 +8,11 @@ import { useState, useEffect, useRef } from "react";
 import createScrollSnap from "scroll-snap";
 import Menu from "../components/Menu"
 import Section from "../components/Section"
+import Hero from "../components/Hero"
+import Header from "../components/header/header";
+import Footer from "../components/footer/footer"
 
-function Home() {
+const Home = () => {
   const [currentSection, setCurrentSection] = useState(0);
   const [targetSection, setTargetSection] = useState(0);
 
@@ -108,7 +111,8 @@ function Home() {
   }, [targetSection, currentSection, scrollContainer]);
 
   return (
-    <div className="container" ref={setScrollContainer}>
+    <div className="appContainer" ref={setScrollContainer}>
+      <Header />
       {scrollContainer && (
         <ParallaxProvider scrollContainer={scrollContainer}>
           <ParallaxBanner className="mountains">
@@ -116,12 +120,14 @@ function Home() {
           </ParallaxBanner>
           <Menu currentSection={targetSection} setSection={setTargetSection} />
           <div className="sections">
-            <Section index={0} registerSection={registerSection} />
+            <Hero index={0} registerSection={registerSection} />
             <Section index={1} registerSection={registerSection} />
             <Section index={2} registerSection={registerSection} />
             <Section index={3} registerSection={registerSection} />
             <Section index={4} registerSection={registerSection} />
+            <Section index={5} registerSection={registerSection} />
           </div>
+          <Footer />
         </ParallaxProvider>
       )}
     </div>
