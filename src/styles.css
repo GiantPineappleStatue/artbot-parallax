@@ -5,10 +5,12 @@
   html,
   body {
     margin: 0;
+    overflow: hidden;
   }
   
   body {
     font-family: sans-serif;
+
     background-image: url("../public/images/stars.png");
   }
   
