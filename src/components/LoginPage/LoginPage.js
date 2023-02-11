@@ -3,10 +3,8 @@ import Img from '../UI/Img/Img';
 import Input from '../UI/Input/Input';
 import Button from '../UI/Button/Button';
 import Label from '../UI/Label/Label';
-import Link from 'next/link';
 import clsx from 'clsx';
 import Alert from '../UI/Alert/Alert';
-import { withRouter, useRouter } from 'next/router';
 import CircularProgress from '@material-ui/core/CircularProgress/CircularProgress';
 import { connect, useSelector } from 'react-redux';
 import { loginUser } from '../../redux/reducers/auth.duck';
@@ -20,7 +18,7 @@ function LoginPage(props) {
     const [message, setMessage] = React.useState({ message: '', error: false, general: false });
     const [loading, setLoading] = React.useState(false);
     const isMovie = useSelector((state) => state.filter.letsMakeMovie);
-    const router = useRouter();
+    // const router = useRouter();
     const submitHandler = async (e) => {
         setLoading(true);
         e.preventDefault();
@@ -30,8 +28,8 @@ function LoginPage(props) {
         });
         if (loginResponse.code === 'ABT0000') {
             props.login(jwt_decode(loginResponse.data.userToken), loginResponse.data.userToken);
-            if (!isMovie) router.push('/');
-            else router.push('/letsmakeamovie');
+            // if (!isMovie) router.push('/');
+            // else router.push('/letsmakeamovie');
         } else {
             setLoading(false);
             setMessage({ message: loginResponse.message, error: true, general: true });
@@ -141,7 +139,7 @@ function LoginPage(props) {
                         </div>
                         <div className="w-100 my-2 login-form-bottom-line" />
                         <div className="d-flex justify-content-between login-form-bottom">
-                            <Link
+                            {/* <Link
                                 href="/signup"
                                 className="login-form-bottom__left text-light  pointer">
                                 <a>Create new Account</a>
@@ -150,7 +148,7 @@ function LoginPage(props) {
                                 href="/reset-password"
                                 className="login-form-bottom__right text-light pointer">
                                 <a>Forget your password</a>
-                            </Link>
+                            </Link> */}
                         </div>
                     </form>
                 </div>

@@ -1,5 +1,6 @@
 import './modal.css'
 import Offcanvas from 'react-bootstrap/Offcanvas';
+import InputForm from './test'
 
 const Modal = ({ handleClose, show }) => {
     return (
@@ -12,7 +13,7 @@ const Modal = ({ handleClose, show }) => {
                     <span onClick={handleClose}> <i className="fa fa-close"></i></span>
                 </Offcanvas.Header>
                 <Offcanvas.Body>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ullam nobis quas exercitationem cumque consequuntur id earum qui libero molestiae laborum accusamus cupiditate ea ipsa minus quia odio facilis, voluptatum veniam! Rem optio eum excepturi asperiores in. Delectus, deleniti deserunt. Cupiditate assumenda ratione fuga dolores repudiandae numquam eaque odio quo dolorum.
+                   <InputForm />
                 </Offcanvas.Body>
             </Offcanvas>
         </>
