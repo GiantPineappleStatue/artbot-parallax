@@ -2,15 +2,14 @@ import {
   ParallaxProvider,
   ParallaxBanner,
   ParallaxBannerLayer,
-  
-} from "react-scroll-parallax";
-import { useState, useEffect, useRef } from "react";
-import createScrollSnap from "scroll-snap";
-import Menu from "../components/Menu"
-import Section from "../components/Section"
-import Hero from "../components/Hero"
-import Header from "../components/header/header";
-import Footer from "../components/footer/footer"
+} from 'react-scroll-parallax';
+import { useState, useEffect, useRef } from 'react';
+import createScrollSnap from 'scroll-snap';
+import Menu from '../components/Menu';
+import Section from '../components/Section';
+import Hero from '../components/Hero';
+import Header from '../components/header/header';
+import Footer from '../components/footer/footer';
 
 const Home = () => {
   const [currentSection, setCurrentSection] = useState(0);
@@ -19,9 +18,7 @@ const Home = () => {
   const checkRef = useRef(() => {
     return { targetSection };
   });
-  const [scrollContainer, setScrollContainer] = useState(
-    null
-  );
+  const [scrollContainer, setScrollContainer] = useState(null);
 
   const sectionsRef = useRef({});
   const observerRef = useRef(null);
@@ -52,7 +49,7 @@ const Home = () => {
             }
           });
         },
-        { root: null, rootMargin: "0px", threshold: 0.5 }
+        { root: null, rootMargin: '0px', threshold: 0.5 }
       );
 
       for (const section of Object.values(sectionsRef.current)) {
@@ -72,13 +69,13 @@ const Home = () => {
 
       scrollContainer.scrollTo({
         top: sum,
-        behavior: "smooth",
+        behavior: 'smooth',
       });
 
       return () => {
         scrollContainer.scrollBy({
           top: 0,
-          behavior: "smooth",
+          behavior: 'smooth',
         });
       };
     }
@@ -89,9 +86,9 @@ const Home = () => {
       const { unbind } = createScrollSnap(
         scrollContainer,
         {
-          snapDestinationY: "100%",
+          snapDestinationY: '100%',
           duration: 750,
-          threshold: 0.01,
+          threshold: 0.1,
         },
         () => {
           const sections = Object.entries(sectionsRef.current);
@@ -132,7 +129,6 @@ const Home = () => {
       )}
     </div>
   );
-}
+};
 
-
-export default Home
+export default Home;
