@@ -44,7 +44,7 @@ function Footer() {
                                 </div>
                             </div>
                         </Col>
-                        <Col lg={4} md={4} xs={4}>
+                        <Col lg={8} md={8} xs={8}>
                             <div className="footerBtnWrapper2 d-flex justify-content-end">
                                 <div className="footerIconWrapperR">
                                     <img src={instagram} alt="" className="footerIcon" />
