@@ -1,41 +1,39 @@
 import React, { useState } from 'react';
+import { useNavigate } from "react-router-dom";
 import square from '../../../assets/accessiility.png';
+import { connect, useSelector } from 'react-redux';
+import { loginUser } from '../../../redux/reducers/auth.duck';
+import { login } from '../../../services/util';
+import jwt_decode from 'jwt-decode';
 
 const LoginForm = (props) => {
-  const [username, setUsername] = useState({
-    value: '',
-    touch: false,
-    error: false,
-  });
-  const [password, setPassword] = useState({
-    value: '',
-    touch: false,
-    error: false,
-  });
-  const [remember, setRemember] = useState(true);
-  const [message, setMessage] = useState({
-    message: '',
-    error: false,
-    general: false,
-  });
-  const [loading, setLoading] = useState(false);
+  const [username, setUsername] = React.useState({ value: '', touch: false, error: false });
+  const [password, setPassword] = React.useState({ value: '', touch: false, error: false });
+  const [remember, setRemember] = React.useState(true);
+  const [message, setMessage] = React.useState({ message: '', error: false, general: false });
+  const [loading, setLoading] = React.useState(false);
+  let navigate = useNavigate();
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
+  const submitHandler = async (e) => {
     setLoading(true);
-    // Make API call to validate the username and password
-    // ...
-
-    // Set the message based on the result of the API call
-    // ...
-
-    setLoading(false);
-  };
+    e.preventDefault();
+    let loginResponse = await login({
+        username: username.value,
+        password: password.value
+    });
+    if (loginResponse.code === 'ABT0000') {
+        props.login(jwt_decode(loginResponse.data.userToken), loginResponse.data.userToken);
+        navigate("/");
+    } else {
+        setLoading(false);
+        setMessage({ message: loginResponse.message, error: true, general: true });
+    }
+};
 
   return (
     <>
       <div>Log In</div>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={submitHandler}>
         <div
           style={{ display: 'flex', alignItems: 'center', marginTop: '16px' }}
         >
@@ -45,11 +43,18 @@ const LoginForm = (props) => {
           <div style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
             <label htmlFor="username">Username:</label>
             <input
+              required
               type="text"
-              id="username"
-              value={username}
-              onChange={(event) => setUsername(event.target.value)}
-              style={{ width: '100%', marginTop: '8px' }}
+              value={username.value}
+              onChange={(e) =>
+                  setUsername({
+                      value: e.target.value,
+                      touch: true,
+                      error: e.target.value ? false : true
+                  })
+              }
+              className="form-control login-form__input"
+              placeholder="Username"
             />
           </div>
         </div>
@@ -62,11 +67,18 @@ const LoginForm = (props) => {
           <div style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
             <label htmlFor="password">Password:</label>
             <input
-              type="password"
-              id="password"
-              value={password}
-              onChange={(event) => setPassword(event.target.value)}
-              style={{ width: '100%', marginTop: '8px' }}
+required
+type="password"
+value={password.value}
+onChange={(e) =>
+    setPassword({
+        value: e.target.value,
+        touch: true,
+        error: e.target.value ? false : true
+    })
+}
+className="form-control login-form__input"
+placeholder="Password"
             />
           </div>
         </div>
@@ -108,4 +120,9 @@ const LoginForm = (props) => {
   );
 };
 
-export default LoginForm;
+
+const mapDispatchToProps = (dispatch) => ({
+  login: (data, token) => dispatch(loginUser(data, token))
+});
+
+export default connect(null, mapDispatchToProps)(LoginForm);
