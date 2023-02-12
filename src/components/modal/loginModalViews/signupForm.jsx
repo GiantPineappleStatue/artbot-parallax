@@ -49,6 +49,25 @@ function SignUpForm(props) {
       setEmail({ value: '', touch: false, error: false });
       setPassword({ value: '', touch: false, error: false });
       setConfirmPassword({ value: '', touch: false, error: false });
+      // setMessage({ message: responseData.message, error: true, general: true });
+
+      // let loginResponse = await login({
+      //     username: username.value,
+      //     password: password.value
+      // });
+      // if (loginResponse.code === 'ABT0000') {
+      //     dispatch(
+      //         loginUser(
+      //             jwt_decode(loginResponse.data.userToken),
+      //             loginResponse.data.userToken
+      //         )
+      //     );
+      //     if (isMovie) router.push('/letsmakeamovie');
+      //     else router.push('/welcome');
+      // } else {
+      //     setLoading(false);
+      //     setMessage({ message: loginResponse.message, error: true, general: true });
+      // }
     }
     setLoading(false);
   };

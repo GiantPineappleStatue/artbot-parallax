@@ -7,23 +7,23 @@ import { login } from '../../../services/util';
 import jwt_decode from 'jwt-decode';
 
 const LoginForm = (props) => {
-  const [username, setUsername] = React.useState({
+  const [username, setUsername] = useState({
     value: '',
     touch: false,
     error: false,
   });
-  const [password, setPassword] = React.useState({
+  const [password, setPassword] = useState({
     value: '',
     touch: false,
     error: false,
   });
-  const [remember, setRemember] = React.useState(true);
-  const [message, setMessage] = React.useState({
+  const [remember, setRemember] = useState(true);
+  const [message, setMessage] = useState({
     message: '',
     error: false,
     general: false,
   });
-  const [loading, setLoading] = React.useState(false);
+  const [loading, setLoading] = useState(false);
   let navigate = useNavigate();
 
   const submitHandler = async (e) => {
@@ -56,9 +56,9 @@ const LoginForm = (props) => {
         <div
           style={{ display: 'flex', alignItems: 'center', marginTop: '16px' }}
         >
-          <div style={{ width: '32px', height: '32px', marginRight: '8px' }}>
-            <img src={square} alt="react img" />
-          </div>
+          {/* <div style={{ width: '32px', height: '32px', marginRight: '8px' }}>
+            <img src={''} alt="react img" />
+          </div> */}
           <div style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
             <label htmlFor="username">Username:</label>
             <input
@@ -80,9 +80,9 @@ const LoginForm = (props) => {
         <div
           style={{ display: 'flex', alignItems: 'center', marginTop: '16px' }}
         >
-          <div style={{ width: '32px', height: '32px', marginRight: '8px' }}>
+          {/* <div style={{ width: '32px', height: '32px', marginRight: '8px' }}>
             <img src={square} alt="react img" />
-          </div>
+          </div> */}
           <div style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
             <label htmlFor="password">Password:</label>
             <input
