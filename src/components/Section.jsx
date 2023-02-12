@@ -1,8 +1,6 @@
-import {
-  Parallax,
-} from "react-scroll-parallax";
-import { useState } from 'react'
-import Modal from './modal/modal'
+import { Parallax } from 'react-scroll-parallax';
+import { useState } from 'react';
+import Modal from './modal/modal';
 
 const Section = (props) => {
   const [show, setShow] = useState(false);
@@ -12,13 +10,10 @@ const Section = (props) => {
   return (
     <section
       className="section center-content background"
-      style={{ backgroundImage: `url(/images/${props.index -1 }.png)` }}
+      style={{ backgroundImage: `url(/images/${props.index - 1}.png)` }}
       ref={props.registerSection(props.index)}
     >
-                  <Modal
-                show={show}
-                handleClose={handleClose}
-            />
+      <Modal show={show} handleClose={handleClose} />
       <Parallax speed={25}>
         <article className="slidecard">
           <h1>Header {props.index}</h1>
@@ -34,4 +29,4 @@ const Section = (props) => {
   );
 };
 
-export default Section
+export default Section;

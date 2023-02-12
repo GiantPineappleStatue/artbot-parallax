@@ -1,35 +1,35 @@
 .offcanvas {
-    background-color: transparent !important;
-    backdrop-filter: blur(20px);
-    width: 340px !important;
+  background-color: transparent !important;
+  backdrop-filter: blur(20px);
+  width: 340px !important;
 }
 
 .offcanvas-header span {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .offcanvas-header span svg {
-    color: white;
-    font-size: 30px;
-    margin-bottom: 12px;
+  color: white;
+  font-size: 30px;
+  margin-bottom: 12px;
 }
 
 .offcanvas-body {
-    color: white !important;
+  color: white !important;
 }
 
 .sidebar__btns {
-    display: block;
-    background: #8041FF;
-    border: 2px solid #6634CC;
-    box-shadow: 4px 4px 0px #372163;
-    border-radius: 10px;
-    color: white;
-    font-family: 'Rubik', sans-serif;
-    font-weight: 500;
-    font-size: 16px;
-    width: 160px;
-    height: 44px;
-    margin-bottom: 1rem;
-    margin-left: 1rem;
+  display: block;
+  background: #8041ff;
+  border: 2px solid #6634cc;
+  box-shadow: 4px 4px 0px #372163;
+  border-radius: 10px;
+  color: white;
+  font-family: 'Rubik', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  width: 160px;
+  height: 44px;
+  margin-bottom: 1rem;
+  margin-left: 1rem;
 }

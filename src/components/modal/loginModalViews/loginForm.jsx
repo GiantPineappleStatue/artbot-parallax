@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 import square from '../../../assets/accessiility.png';
 import { connect, useSelector } from 'react-redux';
 import { loginUser } from '../../../redux/reducers/auth.duck';
@@ -7,10 +7,22 @@ import { login } from '../../../services/util';
 import jwt_decode from 'jwt-decode';
 
 const LoginForm = (props) => {
-  const [username, setUsername] = React.useState({ value: '', touch: false, error: false });
-  const [password, setPassword] = React.useState({ value: '', touch: false, error: false });
+  const [username, setUsername] = React.useState({
+    value: '',
+    touch: false,
+    error: false,
+  });
+  const [password, setPassword] = React.useState({
+    value: '',
+    touch: false,
+    error: false,
+  });
   const [remember, setRemember] = React.useState(true);
-  const [message, setMessage] = React.useState({ message: '', error: false, general: false });
+  const [message, setMessage] = React.useState({
+    message: '',
+    error: false,
+    general: false,
+  });
   const [loading, setLoading] = React.useState(false);
   let navigate = useNavigate();
 
@@ -18,17 +30,24 @@ const LoginForm = (props) => {
     setLoading(true);
     e.preventDefault();
     let loginResponse = await login({
-        username: username.value,
-        password: password.value
+      username: username.value,
+      password: password.value,
     });
     if (loginResponse.code === 'ABT0000') {
-        props.login(jwt_decode(loginResponse.data.userToken), loginResponse.data.userToken);
-        navigate("/");
+      props.login(
+        jwt_decode(loginResponse.data.userToken),
+        loginResponse.data.userToken
+      );
+      navigate('/');
     } else {
-        setLoading(false);
-        setMessage({ message: loginResponse.message, error: true, general: true });
+      setLoading(false);
+      setMessage({
+        message: loginResponse.message,
+        error: true,
+        general: true,
+      });
     }
-};
+  };
 
   return (
     <>
@@ -47,11 +66,11 @@ const LoginForm = (props) => {
               type="text"
               value={username.value}
               onChange={(e) =>
-                  setUsername({
-                      value: e.target.value,
-                      touch: true,
-                      error: e.target.value ? false : true
-                  })
+                setUsername({
+                  value: e.target.value,
+                  touch: true,
+                  error: e.target.value ? false : true,
+                })
               }
               className="form-control login-form__input"
               placeholder="Username"
@@ -67,18 +86,18 @@ const LoginForm = (props) => {
           <div style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
             <label htmlFor="password">Password:</label>
             <input
-required
-type="password"
-value={password.value}
-onChange={(e) =>
-    setPassword({
-        value: e.target.value,
-        touch: true,
-        error: e.target.value ? false : true
-    })
-}
-className="form-control login-form__input"
-placeholder="Password"
+              required
+              type="password"
+              value={password.value}
+              onChange={(e) =>
+                setPassword({
+                  value: e.target.value,
+                  touch: true,
+                  error: e.target.value ? false : true,
+                })
+              }
+              className="form-control login-form__input"
+              placeholder="Password"
             />
           </div>
         </div>
@@ -120,9 +139,8 @@ placeholder="Password"
   );
 };
 
-
 const mapDispatchToProps = (dispatch) => ({
-  login: (data, token) => dispatch(loginUser(data, token))
+  login: (data, token) => dispatch(loginUser(data, token)),
 });
 
 export default connect(null, mapDispatchToProps)(LoginForm);
