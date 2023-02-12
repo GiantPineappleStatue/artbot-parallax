@@ -2,16 +2,16 @@ import React from 'react';
 
 export const MenuItem = (props) => {
   return props.index === 0 ? (
-    <p onClick={props.onClick} className={`movie__home`}>
+    <div onClick={props.onClick} className={`movie__home`}>
       <i className="fa fa-home"></i>
-    </p>
+    </div>
   ) : (
-    <p
+    <div
       onClick={props.onClick}
       className={`movie__radio ${props.active && 'active'}`}
     >
       <p></p>
-    </p>
+    </div>
   );
 };
 
