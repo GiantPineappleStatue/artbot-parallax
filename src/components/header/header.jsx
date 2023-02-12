@@ -6,12 +6,16 @@ import Col from 'react-bootstrap/Col';
 import Sidebar from '../sidebar/sidebar';
 import logo from '../../assets/ARTBOT.png'
 import { useNavigate } from 'react-router-dom';
+import LoginModal from '../modal/loginModal'
 
 function Header() {
     const history = useNavigate()
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+    const [showLogin, setShowLogin] = useState(false);
+    const handleLoginClose = () => setShowLogin(false);
+    const handleLoginShow = () => setShowLogin(true);
 
     return (
         <>
@@ -19,6 +23,7 @@ function Header() {
                 show={show}
                 handleClose={handleClose}
             />
+            <LoginModal handleClose={handleLoginClose} show={showLogin}/>
             <div className="headerWrapper" id="header">
                 <Container fluid>
                     <Row className="align-items-center">
@@ -44,7 +49,7 @@ function Header() {
                                         <div className="headerBtn1">
                                             <a className="text-center">Get Started</a>
                                         </div>
-                                        <div className="headerBtn2">
+                                        <div onClick={handleLoginShow} className="headerBtn2">
                                             <a className="text-center">Log In</a>
                                         </div>
                                     </div>
