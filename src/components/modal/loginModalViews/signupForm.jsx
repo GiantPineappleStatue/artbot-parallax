@@ -74,54 +74,104 @@ function SignUpForm(props) {
 
   return (
     <>
-      <form onSubmit={submitHandler}>
-        <h2 style={{ textAlign: 'center' }}>Sign Up</h2>
-        <div
-          style={{ display: 'flex', alignItems: 'center', marginTop: '16px' }}
-        >
-          <div style={{ width: '32px', height: '32px', marginRight: '8px' }}>
-            {/* Icon goes here */}
-          </div>
-          <div style={{ flex: 1 }}>
-            <label htmlFor="username">Username:</label>
-            <input
-              required
+    <div >Sign Up</div>
+    <form onSubmit={submitHandler}>
+    <div style={{ display: 'flex', alignItems: 'center', marginTop: '16px' }}>
+    <div style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
+      <label htmlFor="username">Username:</label>
+      <input required
               type="text"
               value={username.value}
               onChange={(e) =>
                 setUsername({
                   value: e.target.value,
                   touch: true,
-                  error: username.value ? false : true,
+                  error: e.target.value ? false : true,
                 })
               }
-              style={{ width: '100%' }}
+              className="form-control login-form__input"
+              placeholder="Username" 
             />
-          </div>
-        </div>
-        <div
-          style={{ display: 'flex', alignItems: 'center', marginTop: '16px' }}
-        >
-          <div style={{ width: '32px', height: '32px', marginRight: '8px' }}>
-            {/* Icon goes here */}
-          </div>
-          <div style={{ flex: 1 }}>
-            <label htmlFor="email">Email:</label>
-            <input
-              type="email"
-              id="email"
-              value={email}
-              onChange={(event) => setEmail(event.target.value)}
-              style={{ width: '100%' }}
+    </div>
+    </div>
+    {username.value.length < 4 && username.touch && (
+              <span className="text-danger text-center d-block font-weight-bold">
+                Username must be alteast 4 characters long
+              </span>
+            )}
+    <div style={{ display: 'flex', alignItems: 'center', marginTop: '16px' }}>
+    <div style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
+      <label htmlFor="email">Email:</label>
+      <input required
+              type="text"
+              value={email.value}
+              onChange={(e) =>
+                setEmail({
+                  value: e.target.value,
+                  touch: true,
+                  error: e.target.value ? false : true,
+                })
+              }
+              className="form-control login-form__input"
+              placeholder="Username" 
             />
-          </div>
-        </div>
-        <button type="submit" style={{ marginTop: '16px' }}>
-          Sign Up
-        </button>
-      </form>
-      <button onClick={props.backToLogin}>Back</button>
-    </>
+    </div>
+    </div>
+    <div style={{ display: 'flex', alignItems: 'center', marginTop: '16px' }}>
+    <div style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
+      <label htmlFor="password">Password:</label>
+      <input required
+                type="password"
+                value={password.value}
+                onChange={(e) =>
+                  setPassword({
+                    value: e.target.value,
+                    touch: true,
+                    error: password.value ? false : true,
+                })
+              }
+              className="form-control login-form__input"
+              placeholder="Username" 
+            />
+    </div>
+    </div>
+    {password.value.length < 6 && password.touch && (
+              <span className="text-danger text-center d-block font-weight-bold">
+                Minimum length 6
+              </span>
+            )}
+    <div style={{ display: 'flex', alignItems: 'center', marginTop: '16px' }}>
+    <div style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
+      <label htmlFor="confirmPassword">Password:</label>
+      <input                 required
+                type="password"
+                value={confirmPassword.value}
+                onChange={(e) =>
+                  setConfirmPassword({
+                    value: e.target.value,
+                    touch: true,
+                    error: confirmPassword.value || confirmPassword !== password ? false : true,
+                })
+              }
+              className="form-control login-form__input"
+              placeholder="Confirm password" 
+            />
+    </div>
+    </div>
+    {confirmPassword.value !== password.value &&
+              confirmPassword.touch && (
+                <span className="text-danger text-center d-block font-weight-bold">
+                  Password Must Match With Previous Entry
+                </span>
+              )}
+    <div>
+    <div><input type="checkbox" id="termsOfUse" name="termsOfUse" />
+      <label htmlFor="termsOfUse">I agree to the terms of use</label></div>
+    </div>
+    <button type="submit">Submit</button>
+  </form>
+  <button onClick={props.backToLogin}>Back</button>
+  </>
   );
 }
 

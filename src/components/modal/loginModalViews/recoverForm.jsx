@@ -1,36 +1,49 @@
 import React, { useState } from 'react';
+import { resetPassword } from '../../../services/util';
 
 function RecoverForm(props) {
-  const [email, setEmail] = useState('');
+  const [email, setEmail] = useState({ value: '', touch: false, error: false });
+
+  const [message, setMessage] = useState({ message: '', error: false, general: false });
   const [loading, setLoading] = useState(false);
-  const [message, setMessage] = useState({ value: '', error: false });
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    setLoading(true);
-
-    // Perform password reset logic here
-    // ...
-
-    setLoading(false);
-    setMessage({ value: 'Password reset email sent.', error: false });
+  const submitHandler = async (e) => {
+      setLoading(true);
+      e.preventDefault();
+      let resetResponse = await resetPassword({ email: email.value.trim() });
+      if (resetResponse.data.code === 'ABT0000') {
+          setMessage({ message: resetResponse.data.message, error: false, general: true });
+          setEmail({ ...email, value: '' });
+          localStorage.setItem('isMovieChangePassword', true);
+      } else {
+          setMessage({ message: resetResponse.data.message, error: true, general: true });
+      }
+      setLoading(false);
   };
+
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
-        <h2 style={{ textAlign: 'center' }}>Forgot Password</h2>
+        <div>Forgot Password</div>
+      <form onSubmit={submitHandler}>
         <div
           style={{ display: 'flex', alignItems: 'center', marginTop: '16px' }}
         >
           <div style={{ flex: 1 }}>
             <label htmlFor="email">Email:</label>
             <input
-              type="email"
-              id="email"
-              value={email}
-              onChange={(event) => setEmail(event.target.value)}
-              style={{ width: '100%' }}
+                                    required
+                                    type="email"
+                                    value={email.value}
+                                    onChange={(e) =>
+                                        setEmail({
+                                            value: e.target.value,
+                                            touch: true,
+                                            error: e.target.value ? false : true
+                                        })
+                                    }
+                                    className="form-control login-form__input"
+                                    placeholder="Email"
             />
           </div>
         </div>
@@ -49,7 +62,7 @@ function RecoverForm(props) {
           Submit
         </button>
       </form>
-      <p onClick={props.backToLogin}>Back</p>
+      <button onClick={props.backToLogin}>Back</button>
     </>
   );
 }
