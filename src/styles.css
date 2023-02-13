@@ -101,10 +101,10 @@ ul {
 
 .mountains {
   position: absolute;
-  top: 80vh;
+  top: 200vh;
   left: 0;
   right: 0;
-  height: 500vh;
+  height: 550vh;
   z-index: 1;
 }
 

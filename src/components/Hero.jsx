@@ -1,4 +1,6 @@
 import HomeSection from './home/home';
+import ctaImage from '../assets/Sparkle_Clapper.png';
+
 const Hero = (props) => {
   return (
     <section
@@ -7,6 +9,7 @@ const Hero = (props) => {
       ref={props.registerSection(props.index)}
     >
       <HomeSection />
+      <img src={ctaImage} />
     </section>
   );
 };
