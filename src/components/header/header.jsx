@@ -8,7 +8,7 @@ import Sidebar from '../sidebar/sidebar';
 import logo from '../../assets/ARTBOT.png';
 import { useNavigate } from 'react-router-dom';
 import LoginModal from '../modal/loginModal';
-import { logout } from '../redux/reducers/auth.duck';
+import { logout } from '../../redux/reducers/auth.duck';
 
 function Header() {
   const history = useNavigate();
@@ -50,7 +50,7 @@ function Header() {
                     <div className="headerBtn1">
                       <a className="text-center">Get Started</a>
                     </div>
-                    {user.authToken ? (
+                    {user?.authToken ? (
                       <div onClick={handleLogOut} className="headerBtn2">
                         <a className="text-center">Log Out</a>
                       </div>
