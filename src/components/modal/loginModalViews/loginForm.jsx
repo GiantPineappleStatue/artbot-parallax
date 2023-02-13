@@ -56,9 +56,7 @@ const LoginForm = (props) => {
         <div
           style={{ display: 'flex', alignItems: 'center', marginTop: '16px' }}
         >
-          {/* <div style={{ width: '32px', height: '32px', marginRight: '8px' }}>
-            <img src={''} alt="react img" />
-          </div> */}
+          {/* icon here */}
           <div style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
             <label htmlFor="username">Username:</label>
             <input
@@ -80,9 +78,7 @@ const LoginForm = (props) => {
         <div
           style={{ display: 'flex', alignItems: 'center', marginTop: '16px' }}
         >
-          {/* <div style={{ width: '32px', height: '32px', marginRight: '8px' }}>
-            <img src={square} alt="react img" />
-          </div> */}
+          {/* icon here */}
           <div style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
             <label htmlFor="password">Password:</label>
             <input
@@ -105,7 +101,7 @@ const LoginForm = (props) => {
           style={{ display: 'flex', alignItems: 'center', marginTop: '16px' }}
         >
           <div style={{ width: '32px', height: '32px', marginRight: '8px' }}>
-            {/* Icon goes here */}
+          {/* icon here */}
           </div>
           <div style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
             <label htmlFor="remember">Remember me:</label>
