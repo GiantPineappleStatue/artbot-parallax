@@ -8,17 +8,6 @@ import { useState } from 'react';
 const LoginModal = ({ handleClose, show }) => {
   const [active, setActive] = useState('login');
 
-  const closeModal = () => {
-    handleClose();
-    setTimeout(() => {
-      setActive('login');
-    }, '500');
-  };
-
-  const handleView = (view) => {
-    setActive(view);
-  };
-
   return (
     <>
       <Offcanvas
@@ -26,12 +15,13 @@ const LoginModal = ({ handleClose, show }) => {
         show={show}
         placement="end"
         onHide={handleClose}
+        onExited={() => setActive('login')}
       >
         <Offcanvas.Header>
           <div className="headerLogoWrapper">
             <p className="text-center"></p>
           </div>
-          <span onClick={() => closeModal()}>
+          <span onClick={handleClose}>
             {' '}
             <i className="fa fa-close"></i>
           </span>
@@ -39,13 +29,13 @@ const LoginModal = ({ handleClose, show }) => {
         <Offcanvas.Body>
           {active === 'login' ? (
             <LoginForm
-              toSignup={() => handleView('signup')}
-              toRecover={() => handleView('recover')}
+              toSignup={() => setActive('signup')}
+              toRecover={() => setActive('recover')}
             />
           ) : active === 'signup' ? (
-            <SignUpForm backToLogin={() => handleView('login')} />
+            <SignUpForm backToLogin={() => setActive('login')} />
           ) : (
-            <RecoverForm backToLogin={() => handleView('login')} />
+            <RecoverForm backToLogin={() => setActive('login')} />
           )}
         </Offcanvas.Body>
       </Offcanvas>
