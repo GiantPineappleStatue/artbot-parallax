@@ -2,3 +2,14 @@
   right: 0;
   left: auto;
 }
+
+.form-container {
+  display: 'flex';
+  align-items: 'center';
+  margin-top: '16px';
+}
+
+.form-item {
+  flex: 1;
+  flex-direction: column;
+}

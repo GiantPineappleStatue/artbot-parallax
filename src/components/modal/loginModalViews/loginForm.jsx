@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import '../modal.css';
 import { useNavigate } from 'react-router-dom';
 import square from '../../../assets/accessiility.png';
 import { connect, useSelector } from 'react-redux';
@@ -53,11 +54,9 @@ const LoginForm = (props) => {
     <>
       <div>Log In</div>
       <form onSubmit={submitHandler}>
-        <div
-          style={{ display: 'flex', alignItems: 'center', marginTop: '16px' }}
-        >
+        <div className="form-container">
           {/* icon here */}
-          <div style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
+          <div className="form-item">
             <label htmlFor="username">Username:</label>
             <input
               required
@@ -75,11 +74,9 @@ const LoginForm = (props) => {
             />
           </div>
         </div>
-        <div
-          style={{ display: 'flex', alignItems: 'center', marginTop: '16px' }}
-        >
+        <div className="form-container">
           {/* icon here */}
-          <div style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
+          <div className="form-item">
             <label htmlFor="password">Password:</label>
             <input
               required
@@ -97,13 +94,9 @@ const LoginForm = (props) => {
             />
           </div>
         </div>
-        <div
-          style={{ display: 'flex', alignItems: 'center', marginTop: '16px' }}
-        >
-          <div style={{ width: '32px', height: '32px', marginRight: '8px' }}>
-          {/* icon here */}
-          </div>
-          <div style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
+        <div className="form-container">
+          <div className="form-item">{/* icon here */}</div>
+          <div className="form-item">
             <label htmlFor="remember">Remember me:</label>
             <input
               type="checkbox"
