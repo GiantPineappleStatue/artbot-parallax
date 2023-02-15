@@ -65,15 +65,17 @@
   width: 100%;
 }
 
-.homeCarosalWrapper {
-  padding: 100px 0;
-  margin-top: 1.6rem;
+.homeCarouselWrapper {
+  position: static;
+  /* padding: 100px 0;
+  margin-top: 1.6rem; */
   /* background-image: url('../../assets/mountain.svg'); */
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .react-multi-carousel-list {
+  position: absolute;
   width: 650px;
 }
 
@@ -153,10 +155,10 @@
     height: auto;
   }
 
-  .homeCarosalWrapper {
+/*  .homeCarouselWrapper {
     padding: 50px 0;
   }
-}
+} */
 
 @media screen and (max-width: 1023px) {
   .homeIntroHead {
@@ -173,12 +175,6 @@
     text-shadow: 0px 1px 15px rgba(128, 65, 255, 0.4);
   }
 
-  .homeCarosalWrapper {
-    padding: 80px 0;
-    left: 0;
-    width: 100%;
-  }
-
   .customCard {
     width: 320px;
   }
@@ -193,11 +189,12 @@
     margin-top: 4rem;
   }
 
-  .homeCarosalWrapper {
+  .homeCarouselWrapper {
     background-image: url('../../assets/hill2.png');
   }
 
   #hero {
     height: 100vh;
   }
+}
 }

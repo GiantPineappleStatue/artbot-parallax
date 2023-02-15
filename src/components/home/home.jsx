@@ -42,46 +42,45 @@ function HomeSection() {
                     </Row>
                 </Container>
             </div>
-            <div className="homeCarosalWrapper">
-                <div className='d-flex justify-content-center'>
-                    <Carousel responsive={responsive}>
-                        <div>
-                            <Card className="customCard">
-                                <Card.Img className="customCardImg" variant="top" src={img1} />
-                                <Card.Body>
-                                    <Card.Title className="customCardTitle">Birth of ArtBot</Card.Title>
-                                    <Card.Text className="customCardDesc">
-                                        Io Travels Time And Space To Save Great Works Of Art.
-                                    </Card.Text>
-                                </Card.Body>
-                            </Card>
-                        </div>
-                        <div>
-                            <Card className="customCard">
-                                <Card.Img className="customCardImg" variant="top" src={img2} />
-                                <Card.Body>
-                                    <Card.Title className="customCardTitle">Birth of ArtBot</Card.Title>
-                                    <Card.Text className="customCardDesc">
-                                        Io Travels Time And Space To Save Great Works Of Art.
-                                    </Card.Text>
-                                </Card.Body>
-                            </Card>
-                        </div>
-                        <div>
-                            <Card className="customCard">
-                                <Card.Img className="customCardImg" variant="top" src={img3} />
-                                <Card.Body>
-                                    <Card.Title className="customCardTitle">Birth of ArtBot</Card.Title>
-                                    <Card.Text className="customCardDesc">
-                                        Io Travels Time And Space To Save Great Works Of Art.
-                                    </Card.Text>
-                                </Card.Body>
-                            </Card>
-                        </div>
-                    </Carousel>
-                </div>
+            <div className="homeCarouselWrapper">                
+                <Carousel responsive={responsive}>
+                    <div>
+                        <Card className="customCard">
+                            <Card.Img className="customCardImg" variant="top" src={img1} />
+                            <Card.Body>
+                                <Card.Title className="customCardTitle">Birth of ArtBot</Card.Title>
+                                <Card.Text className="customCardDesc">
+                                    Io Travels Time And Space To Save Great Works Of Art.
+                                </Card.Text>
+                            </Card.Body>
+                        </Card>
+                    </div>
+                    <div>                   
+                        <Card className="customCard">
+                            <Card.Img className="customCardImg" variant="top" src={img2} />
+                            <Card.Body>
+                                <Card.Title className="customCardTitle">Birth of ArtBot</Card.Title>
+                                <Card.Text className="customCardDesc">
+                                    Io Travels Time And Space To Save Great Works Of Art.
+                                </Card.Text>
+                            </Card.Body>
+                        </Card>   
+                    </div>                    
+                    <div>
+                        <Card className="customCard">
+                            <Card.Img className="customCardImg" variant="top" src={img3} />
+                            <Card.Body>
+                                <Card.Title className="customCardTitle">Birth of ArtBot</Card.Title>
+                                <Card.Text className="customCardDesc">
+                                    Io Travels Time And Space To Save Great Works Of Art.
+                                </Card.Text>
+                            </Card.Body>
+                        </Card>
+                    </div>
+                </Carousel>
             </div>
         </div>
+            
     )
 }
 
