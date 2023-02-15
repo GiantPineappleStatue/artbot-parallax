@@ -60,6 +60,10 @@ ul {
   height: 100vh;
 }
 
+.hero-section {
+  height: 100vh;
+}
+
 .center-content {
   display: flex;
   align-items: center;
@@ -101,7 +105,7 @@ ul {
 
 .mountains {
   position: absolute;
-  top: 200vh;
+  top: 200%;
   left: 0;
   right: 0;
   height: 550vh;

@@ -87,8 +87,8 @@ const Home = () => {
         scrollContainer,
         {
           snapDestinationY: '100%',
-          duration: 750,
-          threshold: 0.1,
+          duration: 1500,
+          threshold: 0.3,
         },
         () => {
           const sections = Object.entries(sectionsRef.current);
@@ -113,7 +113,11 @@ const Home = () => {
       {scrollContainer && (
         <ParallaxProvider scrollContainer={scrollContainer}>
           <ParallaxBanner className="mountains">
-            <ParallaxBannerLayer image="/images/mid.svg" speed={20} />
+            <ParallaxBannerLayer
+              image="/images/mid.svg"
+              speed={-15}
+              style={{ scale: '1' }}
+            />
           </ParallaxBanner>
           <Menu currentSection={targetSection} setSection={setTargetSection} />
           <div className="sections">
