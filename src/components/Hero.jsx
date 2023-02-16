@@ -1,4 +1,4 @@
-import HomeSection from './home/video';
+import HomeSection from './home/home';
 import ctaImage from '../assets/Sparkle_Clapper.png';
 
 const Hero = (props) => {
