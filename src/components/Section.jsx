@@ -10,7 +10,7 @@ const Section = (props) => {
   return (
     <section
       className="section center-content background"
-      style={{ backgroundImage: `url(/images/${props.index - 1}.png)` }}
+      //style={{ backgroundImage: `url(/images/${props.index - 1}.png)` }}
       ref={props.registerSection(props.index)}
     >
       <Modal show={show} handleClose={handleClose} />

@@ -123,3 +123,19 @@ button {
   margin: 1rem 0 1.5rem 0;
   padding: 10px 20px;
 }
+
+.sectionwrapper {
+  position:relative;
+}
+
+.sectionwrapper .tower {
+  width: 45vw;
+  height: auto;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-75%);
+  pointer-events: none;
+  image-rendering: pixelated;
+}
