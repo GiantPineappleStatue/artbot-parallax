@@ -103,13 +103,11 @@ ul {
   }
 }
 
-.mountains {
-  position: absolute;
-  top: 200%;
-  left: 0;
-  right: 0;
-  height: 550vh;
-  z-index: 1;
+.sections {
+  background-image: url('../public/images/mid.svg');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center top 75vh;
 }
 
 button {

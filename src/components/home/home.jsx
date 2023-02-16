@@ -52,9 +52,9 @@ function HomeSection() {
                                     height="315"
                                     src="https://www.youtube-nocookie.com/embed/YWFgShvr6Z4?controls=0"
                                     title="YouTube video player"
-                                    frameborder="0"
+                                    frameBorder="0"
                                     allow="accelerometer; autoplay; modestbranding; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                    allowfullscreen
+                                    allowFullScreen
                                     ></iframe>
                                 </Ratio>
                                 {/*<Card.Img className="customCardImg" variant="top" src={img1} />*/}

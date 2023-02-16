@@ -112,13 +112,6 @@ const Home = () => {
       <Header />
       {scrollContainer && (
         <ParallaxProvider scrollContainer={scrollContainer}>
-          <ParallaxBanner className="mountains">
-            <ParallaxBannerLayer
-              image="/images/mid.svg"
-              speed={-15}
-              style={{ scale: '1' }}
-            />
-          </ParallaxBanner>
           <Menu currentSection={targetSection} setSection={setTargetSection} />
           <div className="sections">
             <Hero index={0} registerSection={registerSection} />
