@@ -107,8 +107,30 @@ const Home = () => {
     }
   }, [targetSection, currentSection, scrollContainer]);
 
+  const listenScrollEvent = (ev) => {
+    //let wH = window.innerHeight;
+    let target = ev.target;
+    let wH = target.scrollHeight;
+    let tY = target.scrollTop;
+
+    let percentage = 0;
+    if(tY > wH) {
+      percentage = 100;
+    } else {
+      percentage = (tY / wH);
+    }
+    let offset = 75-(percentage * 25);
+    if(offset < 50) {
+      offset = 50;
+    }
+    if(offset > 75) {
+      offset = 75;
+    }
+    document.querySelector('.sections').style.backgroundPositionY = offset + 'vh';
+  }
+
   return (
-    <div className="appContainer" ref={setScrollContainer}>
+    <div className="appContainer" ref={setScrollContainer} onScroll={listenScrollEvent}>
       <Header />
       {scrollContainer && (
         <ParallaxProvider scrollContainer={scrollContainer}>
