@@ -115,8 +115,8 @@ const Home = () => {
           <ParallaxBanner className="mountains">
             <ParallaxBannerLayer
               image="/images/mid.svg"
-              speed={-15}
-              style={{ scale: '1' }}
+              speed={-150}
+              style={{ width: '100%' }}
             />
           </ParallaxBanner>
           <Menu currentSection={targetSection} setSection={setTargetSection} />
