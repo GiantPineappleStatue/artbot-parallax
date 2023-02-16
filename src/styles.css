@@ -108,6 +108,7 @@ ul {
   background-repeat: no-repeat;
   background-size: 100%;
   background-position: center top 75vh;
+  background-attachment: fixed;
 }
 
 button {
@@ -131,7 +132,7 @@ button {
   height: auto;
   display: block;
   position: absolute;
-  top: 0;
+  top: 25vh;
   left: 50%;
   transform: translateX(-75%);
   pointer-events: none;
