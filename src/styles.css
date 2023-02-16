@@ -125,6 +125,7 @@ button {
 
 .sectionwrapper {
   position:relative;
+  overflow: hidden;
 }
 
 .sectionwrapper .tower {

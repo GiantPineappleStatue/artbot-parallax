@@ -107,7 +107,7 @@ const Home = () => {
     }
   }, [targetSection, currentSection, scrollContainer]);
 
-  const listenScrollEvent = (ev) => {
+  const parallaxMountains = (ev) => {
     //let wH = window.innerHeight;
     let target = ev.target;
     let wH = target.scrollHeight;
@@ -127,6 +127,44 @@ const Home = () => {
       offset = 75;
     }
     document.querySelector('.sections').style.backgroundPositionY = offset + 'vh';
+  }
+
+  const parallaxTower = (ev) => {
+    let target = ev.target;
+    let pageScroll = target.scrollTop;
+
+    let tower = document.querySelector('img.tower'); // Get tower image
+    let sectionWrapper = document.querySelector('div.sectionwrapper'); // Get sectionwrapper
+    let sectionScroll = pageScroll - sectionWrapper.offsetTop; // Get scroll position within sectionwrapper based on page scroll + sectionwrapper offset
+    let wrapperLength = sectionWrapper.clientHeight; // Get total height of sectionwrapper
+
+    let towerHeight = tower.clientHeight + (target.clientHeight * 0.25); // Tower height + 25vh
+
+    let scrollPercentage = sectionScroll / wrapperLength; // Get percentage scrolled within section
+
+
+    // Make sure both of these are > 0
+    if(sectionScroll < 0) {
+      sectionScroll = 0;
+    }
+    if(scrollPercentage < 0) {
+      scrollPercentage = 0;
+    }
+
+    // Get offset in pixels based on tower height + position in sectionwrapper
+    let scrollOffset = towerHeight * scrollPercentage;
+
+    // Set offset as 25vh + calculated pixels
+    let offset = `calc(25vh)`;
+    if(scrollPercentage > 0) {
+      offset = `calc(25vh + ${scrollOffset.toFixed(0)}px)`;
+    }
+    tower.style.top = offset;
+  }
+
+  const listenScrollEvent = (ev) => {
+    parallaxMountains(ev);
+    parallaxTower(ev);
   }
 
   return (
