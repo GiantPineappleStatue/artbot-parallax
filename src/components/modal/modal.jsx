@@ -1,4 +1,4 @@
-import '../modal.css';
+import './modal.css';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 
 const Modal = ({ handleClose, show }) => {
