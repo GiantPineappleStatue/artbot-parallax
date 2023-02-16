@@ -9,7 +9,7 @@ const Hero = (props) => {
       ref={props.registerSection(props.index)}
     >
       <HomeSection />
-      <img src={ctaImage} />
+      <img className="cta" alt="call to action" src={ctaImage} />
     </section>
   );
 };
