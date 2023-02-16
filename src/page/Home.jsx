@@ -87,8 +87,8 @@ const Home = () => {
         scrollContainer,
         {
           snapDestinationY: '100%',
-          duration: 1500,
-          threshold: 0.3,
+          duration: 250,
+          threshold: 0.1,
         },
         () => {
           const sections = Object.entries(sectionsRef.current);
@@ -107,26 +107,82 @@ const Home = () => {
     }
   }, [targetSection, currentSection, scrollContainer]);
 
+  const parallaxMountains = (ev) => {
+    //let wH = window.innerHeight;
+    let target = ev.target;
+    let wH = target.scrollHeight;
+    let tY = target.scrollTop;
+
+    let percentage = 0;
+    if(tY > wH) {
+      percentage = 100;
+    } else {
+      percentage = (tY / wH);
+    }
+    let offset = 75-(percentage * 25);
+    if(offset < 50) {
+      offset = 50;
+    }
+    if(offset > 75) {
+      offset = 75;
+    }
+    document.querySelector('.sections').style.backgroundPositionY = offset + 'vh';
+  }
+
+  const parallaxTower = (ev) => {
+    let target = ev.target;
+    let pageScroll = target.scrollTop;
+
+    let tower = document.querySelector('img.tower'); // Get tower image
+    let sectionWrapper = document.querySelector('div.sectionwrapper'); // Get sectionwrapper
+    let sectionScroll = pageScroll - sectionWrapper.offsetTop; // Get scroll position within sectionwrapper based on page scroll + sectionwrapper offset
+    let wrapperLength = sectionWrapper.clientHeight; // Get total height of sectionwrapper
+
+    let towerHeight = tower.clientHeight + (target.clientHeight * 0.25); // Tower height + 25vh
+
+    let scrollPercentage = sectionScroll / wrapperLength; // Get percentage scrolled within section
+
+
+    // Make sure both of these are > 0
+    if(sectionScroll < 0) {
+      sectionScroll = 0;
+    }
+    if(scrollPercentage < 0) {
+      scrollPercentage = 0;
+    }
+
+    // Get offset in pixels based on tower height + position in sectionwrapper
+    let scrollOffset = towerHeight * scrollPercentage;
+
+    // Set offset as 25vh + calculated pixels
+    let offset = `calc(25vh)`;
+    if(scrollPercentage > 0) {
+      offset = `calc(25vh + ${scrollOffset.toFixed(0)}px)`;
+    }
+    tower.style.top = offset;
+  }
+
+  const listenScrollEvent = (ev) => {
+    parallaxMountains(ev);
+    parallaxTower(ev);
+  }
+
   return (
-    <div className="appContainer" ref={setScrollContainer}>
+    <div className="appContainer" ref={setScrollContainer} onScroll={listenScrollEvent}>
       <Header />
       {scrollContainer && (
         <ParallaxProvider scrollContainer={scrollContainer}>
-          <ParallaxBanner className="mountains">
-            <ParallaxBannerLayer
-              image="/images/mid.svg"
-              speed={-150}
-              style={{ width: '100%' }}
-            />
-          </ParallaxBanner>
           <Menu currentSection={targetSection} setSection={setTargetSection} />
           <div className="sections">
             <Hero index={0} registerSection={registerSection} />
-            <Section index={1} registerSection={registerSection} />
-            <Section index={2} registerSection={registerSection} />
-            <Section index={3} registerSection={registerSection} />
-            <Section index={4} registerSection={registerSection} />
-            <Section index={5} registerSection={registerSection} />
+            <div className="sectionwrapper">
+              <img className="tower" src="/images/tower.png" />
+              <Section index={1} registerSection={registerSection} />
+              <Section index={2} registerSection={registerSection} />
+              <Section index={3} registerSection={registerSection} />
+              <Section index={4} registerSection={registerSection} />
+              <Section index={5} registerSection={registerSection} />
+            </div>
           </div>
           <Footer />
         </ParallaxProvider>

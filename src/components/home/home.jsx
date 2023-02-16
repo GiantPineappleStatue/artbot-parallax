@@ -8,6 +8,7 @@ import img2 from '../../assets/tree2.jpg'
 import img3 from '../../assets/tree3.jpg'
 import Card from 'react-bootstrap/Card';
 import Carousel from 'react-multi-carousel';
+import Ratio from 'react-bootstrap/Ratio';
 import 'react-multi-carousel/lib/styles.css';
 
 function HomeSection() {
@@ -27,7 +28,7 @@ function HomeSection() {
     };
 
     return (
-        <div id='hero'>
+        <div id="hero">
             <div className="homeSectionWrapper" >
                 <br />
                 <br />
@@ -41,13 +42,22 @@ function HomeSection() {
                         </Col>
                     </Row>
                 </Container>
-            </div>
-            <div className="homeCarosalWrapper">
-                <div className='d-flex justify-content-center'>
+                <div className="homeCarouselWrapper">                
                     <Carousel responsive={responsive}>
                         <div>
                             <Card className="customCard">
-                                <Card.Img className="customCardImg" variant="top" src={img1} />
+                                <Ratio aspectRatio="16x9">
+                                    <iframe
+                                    width="560"
+                                    height="315"
+                                    src="https://www.youtube-nocookie.com/embed/YWFgShvr6Z4?controls=0"
+                                    title="YouTube video player"
+                                    frameBorder="0"
+                                    allow="accelerometer; autoplay; modestbranding; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    allowFullScreen
+                                    ></iframe>
+                                </Ratio>
+                                {/*<Card.Img className="customCardImg" variant="top" src={img1} />*/}
                                 <Card.Body>
                                     <Card.Title className="customCardTitle">Birth of ArtBot</Card.Title>
                                     <Card.Text className="customCardDesc">
@@ -56,7 +66,7 @@ function HomeSection() {
                                 </Card.Body>
                             </Card>
                         </div>
-                        <div>
+                        <div>                   
                             <Card className="customCard">
                                 <Card.Img className="customCardImg" variant="top" src={img2} />
                                 <Card.Body>
@@ -65,8 +75,8 @@ function HomeSection() {
                                         Io Travels Time And Space To Save Great Works Of Art.
                                     </Card.Text>
                                 </Card.Body>
-                            </Card>
-                        </div>
+                            </Card>   
+                        </div>                    
                         <div>
                             <Card className="customCard">
                                 <Card.Img className="customCardImg" variant="top" src={img3} />
@@ -81,7 +91,7 @@ function HomeSection() {
                     </Carousel>
                 </div>
             </div>
-        </div>
+        </div>            
     )
 }
 
