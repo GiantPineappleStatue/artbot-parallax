@@ -1,7 +1,7 @@
-import './modal.css';
+import '../modal.css';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 
-const Modal = ({ handleClose, show }) => {
+function SlideOne({ handleClose, show }) {
   return (
     <>
       <Offcanvas
@@ -62,6 +62,6 @@ const Modal = ({ handleClose, show }) => {
       </Offcanvas>
     </>
   );
-};
+}
 
-export default Modal;
+export default SlideOne;
