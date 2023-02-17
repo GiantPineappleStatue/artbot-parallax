@@ -67,8 +67,13 @@ ul {
   height: 100vh;
 }
 
+#hero {
+  background-color: transparent;
+}
+
 .hero-section {
   height: 100vh;
+  z-index: -1;
 }
 
 .pc {
@@ -106,16 +111,6 @@ ul {
   left: 0;
   right: 0;
   z-index: 2;
-}
-
-@media only screen and (max-width: 600px) {
-  .sections {
-    /* position: absolute; */
-    top: 0;
-    left: -50%;
-    right: 0;
-    z-index: 2;
-  }
 }
 
 .sections {
@@ -189,5 +184,35 @@ button {
 
   .res {
     display: block;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .sections {
+    /* position: absolute; */
+    top: 0;
+    left: -50%;
+    right: 0;
+    z-index: 2;
+  }
+
+  .center-content {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    padding-left: 45%;
+    padding-right: 2em;
+  }
+
+  .sectionwrapper .tower {
+    width: 100vw;
+    height: auto;
+    display: block;
+    position: absolute;
+    top: 25vh;
+    left: 85%;
+    transform: translateX(-75%);
+    pointer-events: none;
+    image-rendering: pixelated;
   }
 }

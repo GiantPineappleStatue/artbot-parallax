@@ -32,7 +32,7 @@ function Header() {
       <MobileModal handleClose={handleCloseMobile} show={showMobile} />
       <div className="headerWrapper" id="header">
         <Container fluid>
-          <Row className="align-items-center" style={{ 'z-index': '-100' }}>
+          <Row className="align-items-center">
             <Col lg={3} md={3} xs={3}>
               <div className="headerBarWrapper" onClick={handleShow}>
                 <i className="fa-solid fa-bars headerBarsIcon"></i>

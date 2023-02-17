@@ -20,7 +20,7 @@ function SlideThree({ handleClose, show }) {
           </span>
         </Offcanvas.Header>
         <Offcanvas.Body>
-          <ul>
+          <ul className="modal-list">
             <li>
               Concept Development:
               <ul>

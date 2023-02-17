@@ -163,17 +163,18 @@ const Home = () => {
     // Set the top position of the tower using the calculated value
     tower.style.top = `${top}px`;
 
-    console.table({
-      sectionScroll: sectionScroll,
-      fifth: towerHeight / 5,
-      wrapperHeight: wrapperHeight,
-      towerHeight: towerHeight,
-      scrollFactor: scrollFactor,
-      scrollOffset: scrollOffset,
-      targetHeight: target.clientHeight,
-      viewportHeight: viewportHeight,
-      top: top,
-    });
+    // console.table({
+    //   sectionScroll: sectionScroll,
+    //   fifth: towerHeight / 5,
+    //   wrapperHeight: wrapperHeight,
+    //   towerHeight: towerHeight,
+    //   scrollFactor: scrollFactor,
+    //   scrollOffset: scrollOffset,
+    //   targetHeight: target.clientHeight,
+    //   viewportHeight: viewportHeight,
+    //   top: top,
+    //   target: target,
+    // });
   };
 
   const listenScrollEvent = (ev) => {

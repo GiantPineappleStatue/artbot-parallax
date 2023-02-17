@@ -30,9 +30,22 @@
   margin-right: 10px;
 }
 
-@media screen and (max-width: 1023px) {
+@media screen and (max-width: 768) {
+  .footerIconWrapper {
+    padding: 2%;
+  }
+
+  .footerIconWrapperL {
+    margin-left: 5.5%;
+  }
+
+  .footerIconWrapperR {
+    margin-right: 5.5%;
+  }
+
   .footerWrapper {
-    display: none;
+    padding-top: 2%;
+    padding-bottom: 3.5%;
   }
 }
 
