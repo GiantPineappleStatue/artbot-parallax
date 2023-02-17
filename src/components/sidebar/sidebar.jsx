@@ -31,20 +31,22 @@ const Sidebar = ({ handleClose, show }) => {
           <button className="sidebar__btns">Crowdfunding</button>
           <button className="sidebar__btns">About Us</button>
         </Offcanvas.Body>
-        <Container fluid>
-          <Row>
-            <Col lg={4} md={4} xs={4}>
-              <div className="footerBtnWrapper1 d-flex justify-content-start">
-                <div className="footerIconWrapperL">
-                  <img src={accessbility} alt="" className="footerIcon" />
+        <div className="footerWrapper">
+          <Container fluid>
+            <Row>
+              <Col lg={12} md={12} xs={12}>
+                <div className="d-flex flex-row justify-content-end">
+                  <div className="footerIconWrapperL">
+                    <img src={accessbility} alt="" className="footerIcon" />
+                  </div>
+                  <div className="footerIconWrapperL">
+                    <img src={en} alt="" className="footerIcon" />
+                  </div>
                 </div>
-                <div className="footerIconWrapperL">
-                  <img src={en} alt="" className="footerIcon" />
-                </div>
-              </div>
-            </Col>
-          </Row>
-        </Container>
+              </Col>
+            </Row>
+          </Container>
+        </div>
       </Offcanvas>
     </>
   );

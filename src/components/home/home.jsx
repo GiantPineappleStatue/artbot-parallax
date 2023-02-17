@@ -50,7 +50,7 @@ function HomeSection() {
         <div className="homeCarouselWrapper">
           <Carousel responsive={responsive}>
             <div>
-              <Card className="customCard">
+              <Card className="customCard border-0">
                 <Ratio aspectRatio="16x9">
                   <iframe
                     width="560"
@@ -74,7 +74,7 @@ function HomeSection() {
               </Card>
             </div>
             <div>
-              <Card className="customCard">
+              <Card className="customCard border-0">
                 <Ratio aspectRatio="16x9">
                   <iframe
                     width="560"
@@ -98,7 +98,7 @@ function HomeSection() {
               </Card>
             </div>
             <div>
-              <Card className="customCard">
+              <Card className="customCard border-0">
                 <Ratio aspectRatio="16x9">
                   <iframe
                     width="560"

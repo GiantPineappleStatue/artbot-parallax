@@ -48,7 +48,12 @@ function Header() {
                 <div className="d-flex justify-content-end align-items-center">
                   <div className="headerButtonWrapper d-flex justify-content-center ">
                     <div className="headerBtn1">
-                      <a className="text-center">Get Started</a>
+                      <a
+                        href="https://discord.gg/STPtXjgYyA"
+                        className="text-center"
+                      >
+                        Join Discord
+                      </a>
                     </div>
                     {user?.authToken ? (
                       <div onClick={handleLogOut} className="headerBtn2">

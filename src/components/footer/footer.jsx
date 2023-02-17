@@ -15,8 +15,8 @@ function Footer() {
       <div className="footerWrapper">
         <Container fluid>
           <Row>
-            <Col lg={8} md={8} xs={8}>
-              <div className="footerBtnWrapper2 d-flex justify-content-end">
+            <Col lg={12} md={12} xs={12}>
+              <div className="d-flex flex-row justify-content-end">
                 <div className="footerIconWrapperR">
                   <img src={instagram} alt="" className="footerIcon" />
                 </div>
