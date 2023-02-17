@@ -6,7 +6,7 @@ import {
 import { useState, useEffect, useRef } from 'react';
 import createScrollSnap from 'scroll-snap';
 import Menu from '../components/Menu';
-import Section from '../components/Section';
+// import Section from '../components/Section';
 import SectionOne from '../components/homeSections/SectionOne';
 import SectionTwo from '../components/homeSections/SectionTwo';
 import SectionThree from '../components/homeSections/SectionThree';

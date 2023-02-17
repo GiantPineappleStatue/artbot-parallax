@@ -89,10 +89,12 @@ function HomeSection() {
                 {/* <Card.Img className="customCardImg" variant="top" src={img2} /> */}
                 <Card.Body>
                   <Card.Title className="customCardTitle">
-                    Birth of ArtBot
+                    Ninja Cats: Teaser One
                   </Card.Title>
                   <Card.Text className="customCardDesc">
-                    Io Travels Time And Space To Save Great Works Of Art.
+                    Two lifelong friends and apprentice ninja cats take
+                    different paths in life after the brutal massacre of their
+                    sensei and dojo
                   </Card.Text>
                 </Card.Body>
               </Card>
@@ -113,10 +115,12 @@ function HomeSection() {
                 {/* <Card.Img className="customCardImg" variant="top" src={img3} /> */}
                 <Card.Body>
                   <Card.Title className="customCardTitle">
-                    Birth of ArtBot
+                    Ninja Cats: Tease Two
                   </Card.Title>
                   <Card.Text className="customCardDesc">
-                    Io Travels Time And Space To Save Great Works Of Art.
+                    Two lifelong friends and apprentice ninja cats take
+                    different paths in life after the brutal massacre of their
+                    sensei and dojo
                   </Card.Text>
                 </Card.Body>
               </Card>

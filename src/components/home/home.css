@@ -76,7 +76,7 @@
 
 .homeCarouselWrapper {
   position: relative;
-  top: 37%;
+  top: 35%;
   left: 50%;
   transform: translate(-50%, -50%);
   display: flex;
@@ -107,26 +107,26 @@
 }
 
 .customCard {
-  max-width: 600px;
+  max-width: 500px;
   margin: 0 auto;
-  background: rgba(255, 255, 255, 0);
+  background: #140c24;
   border: 0.5px solid #8855f3;
   border-radius: 15px;
+  text-align: center;
 }
 
 .customCardTitle {
   font-weight: 700;
   font-size: 1.4rem;
   line-height: 30px;
-  text-align: center;
   color: white;
+  text-align: center;
 }
 
 .customCardDesc {
   line-height: 22px;
   opacity: 0.5;
   color: white;
-  text-align: center;
 }
 
 .customCardImg {
@@ -157,10 +157,6 @@
   .customCardTitle {
     margin-bottom: 0 !important;
     font-size: 18px;
-  }
-
-  .card-body {
-    background-color: rgba(255, 255, 255, 0);
   }
 
   .customCardDesc {
@@ -208,9 +204,9 @@
       margin-top: 4rem;
     }
 
-    .homeCarouselWrapper {
+    /* .homeCarouselWrapper {
       background-image: url('../../assets/hill2.png');
-    }
+    } */
 
     #hero {
       height: 100vh;
