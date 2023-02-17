@@ -137,34 +137,43 @@ const Home = () => {
 
   const parallaxTower = (ev) => {
     let target = ev.target;
+    // # pixels scrolled down pageScroll
     let pageScroll = target.scrollTop;
+    let tower = document.querySelector('img.tower');
+    let sectionWrapper = document.querySelector('div.sectionwrapper');
 
-    let tower = document.querySelector('img.tower'); // Get tower image
-    let sectionWrapper = document.querySelector('div.sectionwrapper'); // Get sectionwrapper
-    let sectionScroll = pageScroll - sectionWrapper.offsetTop; // Get scroll position within sectionwrapper based on page scroll + sectionwrapper offset
-    let wrapperLength = sectionWrapper.clientHeight; // Get total height of sectionwrapper
+    // pageScroll - sectionWrapper offset (so 0 until section wrapper is above top of screen)
+    let sectionScroll = pageScroll - sectionWrapper.offsetTop;
 
-    let towerHeight = tower.clientHeight + target.clientHeight * 0.25; // Tower height + 25vh
+    let towerHeight = tower.clientHeight;
+    // sectionWrapper height
+    let wrapperHeight = sectionWrapper.clientHeight;
 
-    let scrollPercentage = sectionScroll / wrapperLength; // Get percentage scrolled within section
+    // <relation of wrapperHeight and towerHeight>
+    let scrollFactor = towerHeight / wrapperHeight;
 
-    // Make sure both of these are > 0
-    if (sectionScroll < 0) {
-      sectionScroll = 0;
-    }
-    if (scrollPercentage < 0) {
-      scrollPercentage = 0;
-    }
+    // how far down (vs top of sectionWrapper) tower needs to be, likely 'sectionScroll + <something> * scrollFactor'
+    let scrollOffset = sectionScroll - sectionScroll * scrollFactor;
 
-    // Get offset in pixels based on tower height + position in sectionwrapper
-    let scrollOffset = towerHeight * scrollPercentage;
+    // Get the height of the viewport
+    let viewportHeight = window.innerHeight;
+    // Calculate the top position based on the viewport height and the scroll offset
+    let top = viewportHeight * 0.35 + scrollOffset;
 
-    // Set offset as 25vh + calculated pixels
-    let offset = `calc(25vh)`;
-    if (scrollPercentage > 0) {
-      offset = `calc(25vh + ${scrollOffset.toFixed(0)}px)`;
-    }
-    tower.style.top = offset;
+    // Set the top position of the tower using the calculated value
+    tower.style.top = `${top}px`;
+
+    console.table({
+      sectionScroll: sectionScroll,
+      fifth: towerHeight / 5,
+      wrapperHeight: wrapperHeight,
+      towerHeight: towerHeight,
+      scrollFactor: scrollFactor,
+      scrollOffset: scrollOffset,
+      targetHeight: target.clientHeight,
+      viewportHeight: viewportHeight,
+      top: top,
+    });
   };
 
   const listenScrollEvent = (ev) => {

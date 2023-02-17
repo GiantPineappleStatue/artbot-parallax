@@ -30,6 +30,13 @@ ul {
   height: 100%;
 }
 
+.mobile-footer {
+  position: absolute;
+  bottom: 13px;
+  left: -5px;
+  width: 100%;
+}
+
 .menu {
   position: fixed;
   top: 50%;
