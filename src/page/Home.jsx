@@ -7,6 +7,11 @@ import { useState, useEffect, useRef } from 'react';
 import createScrollSnap from 'scroll-snap';
 import Menu from '../components/Menu';
 import Section from '../components/Section';
+import SectionOne from '../components/homeSections/SectionOne';
+import SectionTwo from '../components/homeSections/SectionTwo';
+import SectionThree from '../components/homeSections/SectionThree';
+import SectionFour from '../components/homeSections/SectionFour';
+import SectionFive from '../components/homeSections/SectionFive';
 import Hero from '../components/Hero';
 import Header from '../components/header/header';
 import Footer from '../components/footer/footer';
@@ -114,20 +119,21 @@ const Home = () => {
     let tY = target.scrollTop;
 
     let percentage = 0;
-    if(tY > wH) {
+    if (tY > wH) {
       percentage = 100;
     } else {
-      percentage = (tY / wH);
+      percentage = tY / wH;
     }
-    let offset = 75-(percentage * 25);
-    if(offset < 50) {
+    let offset = 75 - percentage * 25;
+    if (offset < 50) {
       offset = 50;
     }
-    if(offset > 75) {
+    if (offset > 75) {
       offset = 75;
     }
-    document.querySelector('.sections').style.backgroundPositionY = offset + 'vh';
-  }
+    document.querySelector('.sections').style.backgroundPositionY =
+      offset + 'vh';
+  };
 
   const parallaxTower = (ev) => {
     let target = ev.target;
@@ -138,16 +144,15 @@ const Home = () => {
     let sectionScroll = pageScroll - sectionWrapper.offsetTop; // Get scroll position within sectionwrapper based on page scroll + sectionwrapper offset
     let wrapperLength = sectionWrapper.clientHeight; // Get total height of sectionwrapper
 
-    let towerHeight = tower.clientHeight + (target.clientHeight * 0.25); // Tower height + 25vh
+    let towerHeight = tower.clientHeight + target.clientHeight * 0.25; // Tower height + 25vh
 
     let scrollPercentage = sectionScroll / wrapperLength; // Get percentage scrolled within section
 
-
     // Make sure both of these are > 0
-    if(sectionScroll < 0) {
+    if (sectionScroll < 0) {
       sectionScroll = 0;
     }
-    if(scrollPercentage < 0) {
+    if (scrollPercentage < 0) {
       scrollPercentage = 0;
     }
 
@@ -156,19 +161,23 @@ const Home = () => {
 
     // Set offset as 25vh + calculated pixels
     let offset = `calc(25vh)`;
-    if(scrollPercentage > 0) {
+    if (scrollPercentage > 0) {
       offset = `calc(25vh + ${scrollOffset.toFixed(0)}px)`;
     }
     tower.style.top = offset;
-  }
+  };
 
   const listenScrollEvent = (ev) => {
     parallaxMountains(ev);
     parallaxTower(ev);
-  }
+  };
 
   return (
-    <div className="appContainer" ref={setScrollContainer} onScroll={listenScrollEvent}>
+    <div
+      className="appContainer"
+      ref={setScrollContainer}
+      onScroll={listenScrollEvent}
+    >
       <Header />
       {scrollContainer && (
         <ParallaxProvider scrollContainer={scrollContainer}>
@@ -176,12 +185,16 @@ const Home = () => {
           <div className="sections">
             <Hero index={0} registerSection={registerSection} />
             <div className="sectionwrapper">
-              <img className="tower" src="/images/tower.png" />
-              <Section index={1} registerSection={registerSection} />
-              <Section index={2} registerSection={registerSection} />
-              <Section index={3} registerSection={registerSection} />
-              <Section index={4} registerSection={registerSection} />
-              <Section index={5} registerSection={registerSection} />
+              <img
+                className="tower"
+                alt="artbot tower"
+                src="/images/tower.png"
+              />
+              <SectionOne index={1} registerSection={registerSection} />
+              <SectionTwo index={2} registerSection={registerSection} />
+              <SectionThree index={3} registerSection={registerSection} />
+              <SectionFour index={4} registerSection={registerSection} />
+              <SectionFive index={5} registerSection={registerSection} />
             </div>
           </div>
           <Footer />
