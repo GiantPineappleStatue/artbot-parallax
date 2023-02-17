@@ -8,11 +8,15 @@ import Sidebar from '../sidebar/sidebar';
 import logo from '../../assets/ARTBOT.png';
 import { useNavigate } from 'react-router-dom';
 import LoginModal from '../modal/loginModal';
+import MobileModal from '../modal/mobileModal';
 import { logout } from '../../redux/reducers/auth.duck';
 
 function Header() {
   const history = useNavigate();
   const [show, setShow] = useState(false);
+  const [showMobile, setShowMobile] = useState(false);
+  const handleCloseMobile = () => setShowMobile(false);
+  const handleShowMobile = () => setShowMobile(true);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const [showLogin, setShowLogin] = useState(false);
@@ -25,6 +29,7 @@ function Header() {
     <>
       <Sidebar show={show} handleClose={handleClose} />
       <LoginModal handleClose={handleLoginClose} show={showLogin} />
+      <MobileModal handleClose={handleCloseMobile} show={showMobile} />
       <div className="headerWrapper" id="header">
         <Container fluid>
           <Row className="align-items-center">
@@ -48,18 +53,31 @@ function Header() {
                 <div className="d-flex justify-content-end align-items-center">
                   <div className="headerButtonWrapper d-flex justify-content-center ">
                     <div className="headerBtn1">
-                      <a className="text-center">Get Started</a>
+                      <a
+                        href="https://discord.gg/STPtXjgYyA"
+                        className="text-center"
+                      >
+                        Join Discord
+                      </a>
                     </div>
                     {user?.authToken ? (
                       <div onClick={handleLogOut} className="headerBtn2">
-                        <a className="text-center">Log Out</a>
+                        <div className="text-center">Log Out</div>
                       </div>
                     ) : (
                       <div onClick={handleLoginShow} className="headerBtn2">
-                        <a className="text-center">Log In</a>
+                        <div className="text-center">Log In</div>
                       </div>
                     )}
                   </div>
+                </div>
+              </div>
+              <div className="res">
+                <div
+                  onClick={handleShowMobile}
+                  className="headerContactWrapper"
+                >
+                  <i className="fa-solid fa-user headerContactIcon"></i>
                 </div>
               </div>
             </Col>

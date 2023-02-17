@@ -6,7 +6,7 @@ import {
 import { useState, useEffect, useRef } from 'react';
 import createScrollSnap from 'scroll-snap';
 import Menu from '../components/Menu';
-import Section from '../components/Section';
+// import Section from '../components/Section';
 import SectionOne from '../components/homeSections/SectionOne';
 import SectionTwo from '../components/homeSections/SectionTwo';
 import SectionThree from '../components/homeSections/SectionThree';
@@ -136,6 +136,46 @@ const Home = () => {
   };
 
   const parallaxTower = (ev) => {
+    let target = ev.target;
+    // # pixels scrolled down pageScroll
+    let pageScroll = target.scrollTop;
+    let tower = document.querySelector('img.tower');
+    let sectionWrapper = document.querySelector('div.sectionwrapper');
+
+    // pageScroll - sectionWrapper offset (so 0 until section wrapper is above top of screen)
+    let sectionScroll = pageScroll - sectionWrapper.offsetTop;
+
+    let towerHeight = tower.clientHeight;
+    // sectionWrapper height
+    let wrapperHeight = sectionWrapper.clientHeight;
+
+    // <relation of wrapperHeight and towerHeight>
+    let scrollFactor = towerHeight / wrapperHeight;
+
+    // how far down (vs top of sectionWrapper) tower needs to be, likely 'sectionScroll + <something> * scrollFactor'
+    let scrollOffset = sectionScroll - sectionScroll * scrollFactor;
+
+    // Get the height of the viewport
+    let viewportHeight = window.innerHeight;
+    // Calculate the top position based on the viewport height and the scroll offset
+    let top = viewportHeight * 0.35 + scrollOffset;
+
+    // Set the top position of the tower using the calculated value
+    tower.style.top = `${top}px`;
+
+    // console.table({
+    //   sectionScroll: sectionScroll,
+    //   fifth: towerHeight / 5,
+    //   wrapperHeight: wrapperHeight,
+    //   towerHeight: towerHeight,
+    //   scrollFactor: scrollFactor,
+    //   scrollOffset: scrollOffset,
+    //   targetHeight: target.clientHeight,
+    //   viewportHeight: viewportHeight,
+    //   top: top,
+    //   target: target,
+    // });
+  };
 
   const listenScrollEvent = (ev) => {
     parallaxMountains(ev);
