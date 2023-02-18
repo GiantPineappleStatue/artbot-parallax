@@ -21,7 +21,9 @@ const SectionFour = (props) => {
             Production begins! Give feedback to the voice actors, animators, and
             help spread the word.
           </p>
-          <button onClick={handleShow}>Learn More</button>
+          <button className="learn-btn" onClick={handleShow}>
+            Learn More
+          </button>
         </article>
       </Parallax>
     </section>

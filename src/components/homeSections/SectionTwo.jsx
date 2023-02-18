@@ -17,11 +17,14 @@ const SectionTwo = (props) => {
       <Parallax speed={25}>
         <article className="slidecard">
           <h1>Support the process</h1>
+
           <p>
             Help crowdfund the movie. Back the production at any level you feel
             comfortable. Different tiers have different benefits.
           </p>
-          <button onClick={handleShow}>Learn More</button>
+          <button className="learn-btn" onClick={handleShow}>
+            Learn More
+          </button>
         </article>
       </Parallax>
     </section>

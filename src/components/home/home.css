@@ -107,7 +107,7 @@
 }
 
 .customCard {
-  max-width: 500px;
+  max-width: 900px;
   margin: 0 auto;
   background: #140c2400;
   border: 0.5px solid #8855f3;
@@ -138,7 +138,7 @@
 
 @media screen and (max-width: 1080px) {
   .customCard {
-    max-width: 300px;
+    max-width: 900px;
   }
 
   .customCardImg {

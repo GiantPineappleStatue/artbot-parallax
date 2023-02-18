@@ -21,7 +21,9 @@ const SectionFive = (props) => {
             We will hold a digital and in-person premiere, then release the
             movie to be rented and streamed on ArtBot.tv
           </p>
-          <button onClick={handleShow}>Learn More</button>
+          <button className="learn-btn" onClick={handleShow}>
+            Learn More
+          </button>
         </article>
       </Parallax>
     </section>

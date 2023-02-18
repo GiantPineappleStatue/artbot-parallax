@@ -23,7 +23,9 @@ const SectionThree = (props) => {
             concept art to show your own vision for the movie. You can create
             from your own hand or use Midjourney to create AI concept art.
           </p>
-          <button onClick={handleShow}>Learn More</button>
+          <button className="learn-btn" onClick={handleShow}>
+            Learn More
+          </button>
         </article>
       </Parallax>
     </section>

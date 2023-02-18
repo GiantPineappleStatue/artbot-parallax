@@ -203,8 +203,8 @@ const Home = () => {
               Join Discord <i className="fa-solid fa-chevron-right"></i>
             </button>
             <div className="sections">
+              <Hero index={0} registerSection={registerSection} />
               <div className="sectionwrapper">
-                <Hero index={0} registerSection={registerSection} />
                 <img
                   className="tower"
                   alt="artbot tower"
