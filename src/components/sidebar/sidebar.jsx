@@ -31,7 +31,7 @@ const Sidebar = ({ handleClose, show }) => {
           <button className="sidebar__btns">Crowdfunding</button>
           <button className="sidebar__btns">About Us</button>
         </Offcanvas.Body>
-        <div className="footerWrapper res">
+        <div className="sidebar-footer">
           <Container fluid>
             <Row>
               <Col lg={12} md={12} xs={12}>

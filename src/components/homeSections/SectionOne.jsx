@@ -23,7 +23,9 @@ const SectionOne = (props) => {
             favorite idea, and once we reach 1,500 votes, we will have selected
             our movie idea!
           </p>
-          <button onClick={handleShow}>Learn More</button>
+          <button className="learn-btn" onClick={handleShow}>
+            Learn More
+          </button>
         </article>
       </Parallax>
     </section>

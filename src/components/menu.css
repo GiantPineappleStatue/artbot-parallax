@@ -204,7 +204,7 @@
   transform: none;
 }
 
-@media screen and (max-width: 1440px) {
+@media screen and (max-width: 1080px) {
   .make__movie__img__scale {
     -webkit-transform: scale(2);
     transform: scale(2);

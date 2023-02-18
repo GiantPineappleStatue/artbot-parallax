@@ -73,7 +73,7 @@ const MobileModal = ({ handleClose, show }) => {
               </div>
             </div>
           </Col>
-          <div className="footerWrapper mobile-footer res">
+          <div className="mobile-footer res">
             <Container fluid>
               <Row>
                 <Col lg={12} md={12} xs={12}>

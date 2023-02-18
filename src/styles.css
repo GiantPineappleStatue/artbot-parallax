@@ -199,6 +199,7 @@ button {
   .center-content {
     display: flex;
     flex-direction: column-reverse;
+    justify-content: space-evenly;
     align-items: center;
     padding-left: 45%;
     padding-right: 2em;
@@ -215,4 +216,13 @@ button {
     pointer-events: none;
     image-rendering: pixelated;
   }
+}
+
+.learn-btn {
+}
+
+.mobile-discord-btn {
+  position: sticky;
+  left: 30%;
+  bottom: 100%;
 }

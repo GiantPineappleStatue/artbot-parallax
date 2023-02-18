@@ -19,6 +19,7 @@ import Footer from '../components/footer/footer';
 const Home = () => {
   const [currentSection, setCurrentSection] = useState(0);
   const [targetSection, setTargetSection] = useState(0);
+  const [showRadio, setShowRadio] = useState(false);
 
   const checkRef = useRef(() => {
     return { targetSection };
@@ -104,6 +105,11 @@ const Home = () => {
               setTargetSection(Number(key));
             }
           }
+          if (currentSection === 0 || targetSection === 0) {
+            setShowRadio(false);
+          } else {
+            setShowRadio(true);
+          }
         }
       );
       return () => {
@@ -183,34 +189,46 @@ const Home = () => {
   };
 
   return (
-    <div
-      className="appContainer"
-      ref={setScrollContainer}
-      onScroll={listenScrollEvent}
-    >
-      <Header />
-      {scrollContainer && (
-        <ParallaxProvider scrollContainer={scrollContainer}>
-          <Menu currentSection={targetSection} setSection={setTargetSection} />
-          <div className="sections">
-            <Hero index={0} registerSection={registerSection} />
-            <div className="sectionwrapper">
-              <img
-                className="tower"
-                alt="artbot tower"
-                src="/images/tower.png"
+    <>
+      <div
+        className="appContainer"
+        ref={setScrollContainer}
+        onScroll={listenScrollEvent}
+      >
+        <Header />
+        {scrollContainer && (
+          <ParallaxProvider scrollContainer={scrollContainer}>
+            {showRadio ? (
+              <Menu
+                currentSection={targetSection}
+                setSection={setTargetSection}
               />
-              <SectionOne index={1} registerSection={registerSection} />
-              <SectionTwo index={2} registerSection={registerSection} />
-              <SectionThree index={3} registerSection={registerSection} />
-              <SectionFour index={4} registerSection={registerSection} />
-              <SectionFive index={5} registerSection={registerSection} />
+            ) : (
+              ''
+            )}
+            <div className="sections">
+              <Hero index={0} registerSection={registerSection} />
+              <div className="sectionwrapper">
+                <img
+                  className="tower"
+                  alt="artbot tower"
+                  src="/images/tower.png"
+                />
+                <SectionOne index={1} registerSection={registerSection} />
+                <SectionTwo index={2} registerSection={registerSection} />
+                <SectionThree index={3} registerSection={registerSection} />
+                <SectionFour index={4} registerSection={registerSection} />
+                <SectionFive index={5} registerSection={registerSection} />
+              </div>
             </div>
-          </div>
-          <Footer />
-        </ParallaxProvider>
-      )}
-    </div>
+            <Footer />
+          </ParallaxProvider>
+        )}
+      </div>
+      <button className="mobile-discord-btn">
+        Join Discord <i className="fa-solid fa-chevron-right"></i>
+      </button>
+    </>
   );
 };
 

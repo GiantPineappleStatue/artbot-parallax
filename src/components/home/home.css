@@ -136,7 +136,7 @@
   border-radius: 15px 15px 0 0;
 }
 
-@media screen and (max-width: 1440px) {
+@media screen and (max-width: 1080px) {
   .customCard {
     max-width: 300px;
   }
@@ -170,42 +170,56 @@
     height: auto;
   }
 
-  /*  .homeCarouselWrapper {
+  .homeCarouselWrapper {
     padding: 50px 0;
   }
-} */
-
-  @media screen and (max-width: 1023px) {
-    .homeIntroHead {
-      font-weight: 600;
-      font-size: 32px;
-      letter-spacing: 0.005em;
-      text-transform: capitalize;
-    }
-
-    .homeIntroDesc {
-      font-weight: 400;
-      font-size: 16px;
-      text-align: center;
-      text-shadow: 0px 1px 15px rgba(128, 65, 255, 0.4);
-    }
-
-    .customCard {
-      width: 320px;
-    }
-
-    .customCardImg {
-      height: 180px;
-    }
+  .homeSectionWrapper {
+    margin-top: 4rem;
   }
 
-  @media screen and (max-width: 767px) {
-    .homeSectionWrapper {
-      margin-top: 4rem;
-    }
+  #hero {
+    height: 100vh;
+  }
+}
 
-    #hero {
-      height: 100vh;
-    }
+@media screen and (max-width: 1023px) {
+  .homeIntroHead {
+    font-weight: 600;
+    font-size: 32px;
+    letter-spacing: 0.005em;
+    text-transform: capitalize;
+  }
+
+  .homeIntroDesc {
+    font-weight: 400;
+    font-size: 16px;
+    text-align: center;
+    text-shadow: 0px 1px 15px rgba(128, 65, 255, 0.4);
+  }
+
+  .customCard {
+    width: 320px;
+  }
+
+  .customCardImg {
+    height: 180px;
+  }
+
+  .homeSectionWrapper {
+    margin-top: 4rem;
+  }
+
+  #hero {
+    height: 100vh;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .homeSectionWrapper {
+    margin-top: 4rem;
+  }
+
+  #hero {
+    height: 100vh;
   }
 }
