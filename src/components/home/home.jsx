@@ -36,12 +36,10 @@ function HomeSection() {
           <Row>
             <Col lg={12} md={12} xs={12}>
               <div className="homeSectionIntro">
-                <p className="homeIntroHead">
-                  Revolutionizing video & audio crowdfunding with royalty pool
-                  NFTs
-                </p>
+                <p className="homeIntroHead">Let’s Make a Movie!</p>
                 <p className="homeIntroDesc">
-                  Redefining the creator economy with royalty crowdfunding
+                  Vote on every step of the movie making process, and earn money
+                  as the movie does!
                 </p>
               </div>
             </Col>

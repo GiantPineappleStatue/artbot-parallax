@@ -8,6 +8,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import accessbility from '../../assets/accessiility.png';
 import en from '../../assets/en.png';
+import { HashLink } from 'react-router-hash-link';
 
 const Sidebar = ({ handleClose, show }) => {
   return (
@@ -25,11 +26,16 @@ const Sidebar = ({ handleClose, show }) => {
           </span>
         </Offcanvas.Header>
         <Offcanvas.Body>
-          <button className="sidebar__btns">Home</button>
-          <button className="sidebar__btns">Video</button>
-          <button className="sidebar__btns">Audio</button>
-          <button className="sidebar__btns">Crowdfunding</button>
-          <button className="sidebar__btns">About Us</button>
+          <HashLink smooth to="/#home">
+            <button className="sidebar__btns">Home</button>
+          </HashLink>
+          <button className="sidebar__btns">1. Vote</button>
+          <button className="sidebar__btns">2. Crowdfund</button>
+          <button className="sidebar__btns" style={{ padding: '0px' }}>
+            3. Pre-Production
+          </button>
+          <button className="sidebar__btns">4. Production</button>
+          <button className="sidebar__btns">5. Profit!</button>
         </Offcanvas.Body>
         <div className="sidebar-footer">
           <Container fluid>
