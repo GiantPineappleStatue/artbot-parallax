@@ -17,7 +17,6 @@ const SectionOne = (props) => {
       <Parallax speed={25}>
         <article className="slidecard">
           <h1>Vote for your favorite movie idea</h1>
-          <h3>(Poll, vote)</h3>
           <p>
             We’re starting off with 4 animated movie ideas. Vote for your
             favorite idea, and once we reach 1,500 votes, we will have selected

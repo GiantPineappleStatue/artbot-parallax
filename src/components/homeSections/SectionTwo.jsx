@@ -17,7 +17,6 @@ const SectionTwo = (props) => {
       <Parallax speed={25}>
         <article className="slidecard">
           <h1>Support the process</h1>
-          <h3>(Patron, Crowdfund) (Fund the movie)</h3>
           <p>
             Help crowdfund the movie. Back the production at any level you feel
             comfortable. Different tiers have different benefits.

@@ -17,7 +17,6 @@ const SectionFive = (props) => {
       <Parallax speed={25}>
         <article className="slidecard">
           <h1>Release movie and distribute royalties</h1>
-          <h3>(Profit!)</h3>
           <p>
             We will hold a digital and in-person premiere, then release the
             movie to be rented and streamed on ArtBot.tv

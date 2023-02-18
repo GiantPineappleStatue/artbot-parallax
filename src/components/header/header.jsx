@@ -11,7 +11,7 @@ import LoginModal from '../modal/loginModal';
 import MobileModal from '../modal/mobileModal';
 import { logout } from '../../redux/reducers/auth.duck';
 
-function Header() {
+function Header(props) {
   const history = useNavigate();
   const [show, setShow] = useState(false);
   const [showMobile, setShowMobile] = useState(false);
@@ -27,7 +27,11 @@ function Header() {
 
   return (
     <>
-      <Sidebar show={show} handleClose={handleClose} />
+      <Sidebar
+        setSection={props.setSection}
+        show={show}
+        handleClose={handleClose}
+      />
       <LoginModal handleClose={handleLoginClose} show={showLogin} />
       <MobileModal handleClose={handleCloseMobile} show={showMobile} />
       <div className="headerWrapper" id="header">

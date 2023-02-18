@@ -17,7 +17,6 @@ const SectionThree = (props) => {
       <Parallax speed={25}>
         <article className="slidecard">
           <h1>Collaborate with the community</h1>
-          <h3>(Pre-production)</h3>
           <p>
             Vote on every step of the movie making process. Vote on script ideas
             or join the writing room and help write the script. Help create

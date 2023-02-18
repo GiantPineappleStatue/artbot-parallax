@@ -17,7 +17,6 @@ const SectionFour = (props) => {
       <Parallax speed={25}>
         <article className="slidecard">
           <h1>Let’s make our movie</h1>
-          <h3>(Pre-production)</h3>
           <p>
             Production begins! Give feedback to the voice actors, animators, and
             help spread the word.

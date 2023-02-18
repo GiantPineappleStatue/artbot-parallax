@@ -8,9 +8,11 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import accessbility from '../../assets/accessiility.png';
 import en from '../../assets/en.png';
-import { HashLink } from 'react-router-hash-link';
+import instagram from '../../assets/instagram.png';
+import ticktok from '../../assets/ticktok.png';
+import twitter from '../../assets/twitter.png';
 
-const Sidebar = ({ handleClose, show }) => {
+const Sidebar = ({ handleClose, show, setSection }) => {
   return (
     <>
       <Offcanvas show={show} onHide={handleClose}>
@@ -26,28 +28,55 @@ const Sidebar = ({ handleClose, show }) => {
           </span>
         </Offcanvas.Header>
         <Offcanvas.Body>
-          <HashLink smooth to="/#home">
-            <button className="sidebar__btns">Home</button>
-          </HashLink>
-          <button className="sidebar__btns">1. Vote</button>
-          <button className="sidebar__btns">2. Crowdfund</button>
-          <button className="sidebar__btns" style={{ padding: '0px' }}>
+          <button className="sidebar__btns" onClick={() => setSection(0)}>
+            Home
+          </button>
+          <button className="sidebar__btns" onClick={() => setSection(1)}>
+            1. Vote
+          </button>
+          <button className="sidebar__btns" onClick={() => setSection(2)}>
+            2. Crowdfund
+          </button>
+          <button
+            className="sidebar__btns"
+            style={{ padding: '0px' }}
+            onClick={() => setSection(3)}
+          >
             3. Pre-Production
           </button>
-          <button className="sidebar__btns">4. Production</button>
-          <button className="sidebar__btns">5. Profit!</button>
+          <button className="sidebar__btns" onClick={() => setSection(4)}>
+            4. Production
+          </button>
+          <button className="sidebar__btns" onClick={() => setSection(5)}>
+            5. Profit!
+          </button>
         </Offcanvas.Body>
         <div className="sidebar-footer">
           <Container fluid>
             <Row>
+              {' '}
+              <button>Work In Progress</button>
+            </Row>
+            <Row>
+              <Col lg={12} md={12} xs={12}>
+                <div className="d-flex flex-row justify-content-center">
+                  <div className="footerIconWrapperR">
+                    <img src={instagram} alt="" className="footerIcon" />
+                  </div>
+                  <div className="footerIconWrapperR">
+                    <img src={ticktok} alt="" className="footerIcon" />
+                  </div>
+                  <div className="footerIconWrapperR">
+                    <img src={twitter} alt="" className="footerIcon" />
+                  </div>
+                </div>
+              </Col>
+            </Row>
+            <Row>
               <Col lg={12} md={12} xs={12}>
                 <div className="d-flex flex-row justify-content-end">
-                  <div className="footerIconWrapperL">
-                    <img src={accessbility} alt="" className="footerIcon" />
-                  </div>
-                  <div className="footerIconWrapperL">
-                    <img src={en} alt="" className="footerIcon" />
-                  </div>
+                  <button>Terms & Conditions</button>
+                  <button>Privacy Policy</button>
                 </div>
               </Col>
             </Row>

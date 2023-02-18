@@ -192,7 +192,7 @@ const Home = () => {
       >
         {scrollContainer && (
           <ParallaxProvider scrollContainer={scrollContainer}>
-            <Header />
+            <Header setSection={setTargetSection} />
             {currentSection > 0 ? (
               <Menu
                 currentSection={targetSection}
@@ -204,7 +204,7 @@ const Home = () => {
             </button>
             <div className="sections">
               <div className="sectionwrapper">
-                <Hero id="home" index={0} registerSection={registerSection} />
+                <Hero index={0} registerSection={registerSection} />
                 <img
                   className="tower"
                   alt="artbot tower"
