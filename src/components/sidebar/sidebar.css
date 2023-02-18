@@ -19,6 +19,7 @@
 }
 
 .sidebar__btns {
+  position: relative;
   display: block;
   background: #8041ff;
   border: 2px solid #6634cc;
@@ -31,5 +32,11 @@
   width: 160px;
   height: 44px;
   margin-bottom: 1rem;
-  margin-left: 1rem;
+  left: 4rem;
+}
+
+.wip-button {
+  position: relative;
+  width: auto;
+  left: 5rem;
 }

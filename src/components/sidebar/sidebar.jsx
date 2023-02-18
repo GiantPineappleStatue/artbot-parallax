@@ -55,7 +55,7 @@ const Sidebar = ({ handleClose, show, setSection }) => {
           <Container fluid>
             <Row>
               {' '}
-              <button>Work In Progress</button>
+              <button className="wip-button">Work In Progress</button>
             </Row>
             <Row>
               <Col lg={12} md={12} xs={12}>

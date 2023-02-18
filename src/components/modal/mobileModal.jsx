@@ -1,4 +1,5 @@
 import './modal.css';
+import '../sidebar/sidebar.css';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import '../header/header.css';
 import { useState } from 'react';
@@ -46,32 +47,19 @@ const MobileModal = ({ handleClose, show }) => {
         </Offcanvas.Header>
         <Offcanvas.Body>
           <Col lg={3} md={3} xs={3}>
-            <div
-              className="res"
-              style={{ paddingRight: '10px', height: '100%' }}
-            >
-              <div className="d-flex align-items-center">
-                <div className="headerButtonWrapper d-flex justify-content-center ">
-                  <div className="headerBtn1">
-                    <a
-                      href="https://discord.gg/STPtXjgYyA"
-                      className="text-center"
-                    >
-                      Join Discord
-                    </a>
-                  </div>
-                  {user?.authToken ? (
-                    <div onClick={handleLogOut} className="headerBtn2">
-                      <div className="text-center">Log Out</div>
-                    </div>
-                  ) : (
-                    <div onClick={handleLoginShow} className="headerBtn2">
-                      <div className="text-center">Log In</div>
-                    </div>
-                  )}
-                </div>
-              </div>
-            </div>
+            <a href="https://discord.gg/STPtXjgYyA" className="text-center">
+              <button className="sidebar__btns">Join Discord</button>
+            </a>
+
+            {user?.authToken ? (
+              <button onClick={handleLogOut} className="sidebar__btns">
+                Log Out
+              </button>
+            ) : (
+              <button onClick={handleLoginShow} className="sidebar__btns">
+                Log In
+              </button>
+            )}
           </Col>
         </Offcanvas.Body>
       </Offcanvas>

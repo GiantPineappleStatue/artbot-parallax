@@ -199,10 +199,10 @@ button {
   .center-content {
     display: flex;
     flex-direction: column-reverse;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
-    padding-left: 45%;
-    padding-right: 2em;
+    padding-left: 0em;
+    padding-right: 0em;
   }
 
   .sectionwrapper .tower {
