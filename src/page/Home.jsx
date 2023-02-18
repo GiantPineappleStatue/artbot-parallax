@@ -217,7 +217,7 @@ const Home = () => {
                 <SectionFive index={5} registerSection={registerSection} />
               </div>
             </div>
-            <Footer />
+            {/* <Footer /> */}
           </ParallaxProvider>
         )}
       </div>
