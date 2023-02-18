@@ -225,9 +225,9 @@ const Home = () => {
           </ParallaxProvider>
         )}
       </div>
-      <button className="mobile-discord-btn">
+      {/* <button className="mobile-discord-btn">
         Join Discord <i className="fa-solid fa-chevron-right"></i>
-      </button>
+      </button> */}
     </>
   );
 };

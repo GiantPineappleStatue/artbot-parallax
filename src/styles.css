@@ -224,5 +224,5 @@ button {
 .mobile-discord-btn {
   position: sticky;
   left: 30%;
-  bottom: 100%;
+  top: 50%;
 }
