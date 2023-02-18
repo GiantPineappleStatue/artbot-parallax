@@ -20,7 +20,7 @@ function SlideFive({ handleClose, show }) {
           </span>
         </Offcanvas.Header>
         <Offcanvas.Body>
-          <ul>
+          <ul className="modal-list">
             <li>Backers: 50%</li>
             <li>Producer tier backers: 20% (I’m debating this as an option)</li>
             <li>Cast and crew: 30%</li>

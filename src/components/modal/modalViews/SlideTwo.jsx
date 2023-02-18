@@ -22,7 +22,7 @@ function SlideTwo({ handleClose, show }) {
           </span>
         </Offcanvas.Header>
         <Offcanvas.Body>
-          <ul>
+          <ul className="modal-list">
             <li>
               Extra -{' '}
               <a href="https://www.google.com/search?q=extra+benefits">

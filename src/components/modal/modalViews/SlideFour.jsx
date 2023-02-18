@@ -24,7 +24,7 @@ function SlideFour({ handleClose, show }) {
           </span>
         </Offcanvas.Header>
         <Offcanvas.Body>
-          <ul>
+          <ul className="modal-list">
             <li>
               <strong>Concept Development:</strong>
             </li>
