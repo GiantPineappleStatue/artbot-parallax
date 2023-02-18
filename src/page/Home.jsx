@@ -19,7 +19,7 @@ import Footer from '../components/footer/footer';
 const Home = () => {
   const [currentSection, setCurrentSection] = useState(0);
   const [targetSection, setTargetSection] = useState(0);
-  const [showRadio, setShowRadio] = useState(false);
+  const [showRadio, setShowRadio] = useState(true);
 
   const checkRef = useRef(() => {
     return { targetSection };
@@ -104,11 +104,6 @@ const Home = () => {
               setCurrentSection(Number(key));
               setTargetSection(Number(key));
             }
-          }
-          if (currentSection === 0 || targetSection === 0) {
-            setShowRadio(false);
-          } else {
-            setShowRadio(true);
           }
         }
       );
@@ -195,17 +190,18 @@ const Home = () => {
         ref={setScrollContainer}
         onScroll={listenScrollEvent}
       >
-        <Header />
         {scrollContainer && (
           <ParallaxProvider scrollContainer={scrollContainer}>
-            {showRadio ? (
+            <Header />
+            {currentSection > 0 ? (
               <Menu
                 currentSection={targetSection}
                 setSection={setTargetSection}
               />
-            ) : (
-              ''
-            )}
+            ) : null}
+            <button className="mobile-discord-btn res">
+              Join Discord <i className="fa-solid fa-chevron-right"></i>
+            </button>
             <div className="sections">
               <Hero index={0} registerSection={registerSection} />
               <div className="sectionwrapper">
@@ -225,9 +221,6 @@ const Home = () => {
           </ParallaxProvider>
         )}
       </div>
-      {/* <button className="mobile-discord-btn">
-        Join Discord <i className="fa-solid fa-chevron-right"></i>
-      </button> */}
     </>
   );
 };

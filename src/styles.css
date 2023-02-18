@@ -157,7 +157,6 @@ button {
   width: 70px;
   height: 70px;
   border-radius: 50%;
-  /* background-color: #ff5722; */
   animation: bounce 0.75s;
   animation-direction: alternate;
   animation-timing-function: cubic-bezier(0.5, 0.05, 1, 0.5);
@@ -191,7 +190,7 @@ button {
   .sections {
     /* position: absolute; */
     top: 0;
-    left: -50%;
+    /* left: -50%; */
     right: 0;
     z-index: 2;
   }
@@ -225,4 +224,5 @@ button {
   position: sticky;
   left: 30%;
   top: 50%;
+  z-index: 3;
 }
