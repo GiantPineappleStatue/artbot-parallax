@@ -198,11 +198,9 @@ button {
 
   .center-content {
     display: flex;
-    position: relative;
-    top: 20vh;
-    /* flex-direction: row-reverse; */
-    /* justify-content: space-around; */
-    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: end;
     padding-left: 0em;
     padding-right: 0em;
   }
