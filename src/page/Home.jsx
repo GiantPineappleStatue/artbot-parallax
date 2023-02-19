@@ -199,7 +199,7 @@ const Home = () => {
                 setSection={setTargetSection}
               />
             ) : null}
-            <button className="mobile-discord-btn res">
+            <button className="mobile-discord-btn">
               Join Discord <i className="fa-solid fa-chevron-right"></i>
             </button>
             <div className="sections">

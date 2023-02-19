@@ -187,7 +187,7 @@ button {
   }
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 390px) {
   .sections {
     /* position: absolute; */
     /* top: 0; */
@@ -198,9 +198,11 @@ button {
 
   .center-content {
     display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: end;
+    position: relative;
+    top: 20vh;
+    /* flex-direction: row-reverse; */
+    /* justify-content: space-around; */
+    align-items: center;
     padding-left: 0em;
     padding-right: 0em;
   }
