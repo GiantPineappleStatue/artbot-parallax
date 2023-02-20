@@ -8,13 +8,13 @@ const SectionThree = (props) => {
   const handleShow = () => setShow(true);
 
   return (
-    <section
-      className="section center-content background"
-      //style={{ backgroundImage: `url(/images/${props.index - 1}.png)` }}
-      ref={props.registerSection(props.index)}
-    >
-      <SlideThree show={show} handleClose={handleClose} />
-      <Parallax speed={25}>
+    <Parallax speed={25}>
+      <section
+        className="section center-content background"
+        //style={{ backgroundImage: `url(/images/${props.index - 1}.png)` }}
+        ref={props.registerSection(props.index)}
+      >
+        <SlideThree show={show} handleClose={handleClose} />
         <article className="slidecard">
           <h1>Collaborate with the community</h1>
           <p>
@@ -27,8 +27,8 @@ const SectionThree = (props) => {
             Learn More
           </button>
         </article>
-      </Parallax>
-    </section>
+      </section>
+    </Parallax>
   );
 };
 

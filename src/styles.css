@@ -62,9 +62,11 @@ ul {
   background-color: rgb(168, 255, 79, 0.95);
   color: black;
 }
-
 .section {
   height: 100vh;
+  /* display: flex;
+  flex-direction: column;
+  justify-content: flex-end; */
 }
 
 #hero {
@@ -143,13 +145,14 @@ button {
   height: auto;
   display: block;
   position: absolute;
-  top: 25vh;
   left: 50%;
+  top: 100vh;
   transform: translateX(-75%);
   pointer-events: none;
   image-rendering: pixelated;
   z-index: -1;
 }
+
 .cta {
   display: block;
   margin-left: auto;
@@ -199,10 +202,10 @@ button {
   .center-content {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    align-items: end;
-    padding-left: 0em;
-    padding-right: 0em;
+    justify-content: flex-end;
+    padding-left: 3rem;
+    padding-right: 1rem;
+    padding-bottom: 6rem;
   }
 
   .sectionwrapper .tower {
@@ -210,7 +213,7 @@ button {
     height: auto;
     display: block;
     position: absolute;
-    top: 25vh;
+    top: 100vh;
     left: 80%;
     transform: translateX(-75%);
     pointer-events: none;

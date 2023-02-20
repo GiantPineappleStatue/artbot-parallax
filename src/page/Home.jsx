@@ -52,6 +52,9 @@ const Home = () => {
                   setCurrentSection(index);
                 }
               }
+
+              const element = entry.target.querySelector('.slidecard');
+              element.style.opacity = 0.99;
             }
           });
         },
@@ -100,7 +103,8 @@ const Home = () => {
           const sections = Object.entries(sectionsRef.current);
           for (const [key, value] of sections) {
             const { top } = value.getBoundingClientRect();
-            if (top >= 0 && top < 5) {
+
+            if (Math.abs(top) >= 0 && Math.abs(top) < 5) {
               setCurrentSection(Number(key));
               setTargetSection(Number(key));
             }
@@ -138,6 +142,7 @@ const Home = () => {
 
   const parallaxTower = (ev) => {
     let target = ev.target;
+
     // # pixels scrolled down pageScroll
     let pageScroll = target.scrollTop;
     let tower = document.querySelector('img.tower');
@@ -158,12 +163,16 @@ const Home = () => {
 
     // Get the height of the viewport
     let viewportHeight = window.innerHeight;
+
+    const section = Math.ceil(pageScroll / viewportHeight);
+
+    const values = [0.5, 0.5, 0.45, 0.45, 0.5, 0.5];
     // Calculate the top position based on the viewport height and the scroll offset
-    let top = viewportHeight * 0.35 + scrollOffset;
+    let top = viewportHeight * values[section] + scrollOffset;
 
     // Set the top position of the tower using the calculated value
-    tower.style.top = `${top}px`;
 
+    tower.style.top = `${top}px`;
     // console.table({
     //   sectionScroll: sectionScroll,
     //   fifth: towerHeight / 5,
@@ -182,6 +191,12 @@ const Home = () => {
     parallaxMountains(ev);
     parallaxTower(ev);
   };
+
+  // useEffect(() => {
+  //   if (scrollContainer) {
+  //     parallaxTower({ target: scrollContainer });
+  //   }
+  // }, [scrollContainer]);
 
   return (
     <>
@@ -203,8 +218,8 @@ const Home = () => {
               Join Discord <i className="fa-solid fa-chevron-right"></i>
             </button>
             <div className="sections">
-              <Hero index={0} registerSection={registerSection} />
               <div className="sectionwrapper">
+                <Hero index={0} registerSection={registerSection} />
                 <img
                   className="tower"
                   alt="artbot tower"

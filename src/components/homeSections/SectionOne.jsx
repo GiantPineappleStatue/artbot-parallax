@@ -8,13 +8,13 @@ const SectionOne = (props) => {
   const handleShow = () => setShow(true);
 
   return (
-    <section
-      className="section center-content background"
-      //style={{ backgroundImage: `url(/images/${props.index - 1}.png)` }}
-      ref={props.registerSection(props.index)}
-    >
-      <SlideOne show={show} handleClose={handleClose} />
-      <Parallax speed={25}>
+    <Parallax speed={25}>
+      <section
+        className="section center-content background"
+        //style={{ backgroundImage: `url(/images/${props.index - 1}.png)` }}
+        ref={props.registerSection(props.index)}
+      >
+        <SlideOne show={show} handleClose={handleClose} />
         <article className="slidecard">
           <h1>Vote for your favorite movie idea</h1>
           <p>
@@ -26,8 +26,8 @@ const SectionOne = (props) => {
             Learn More
           </button>
         </article>
-      </Parallax>
-    </section>
+      </section>
+    </Parallax>
   );
 };
 

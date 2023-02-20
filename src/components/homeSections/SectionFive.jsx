@@ -8,13 +8,13 @@ const SectionFive = (props) => {
   const handleShow = () => setShow(true);
 
   return (
-    <section
-      className="section center-content background"
-      //style={{ backgroundImage: `url(/images/${props.index - 1}.png)` }}
-      ref={props.registerSection(props.index)}
-    >
-      <SlideFive show={show} handleClose={handleClose} />
-      <Parallax speed={25}>
+    <Parallax speed={25}>
+      <section
+        className="section center-content background"
+        //style={{ backgroundImage: `url(/images/${props.index - 1}.png)` }}
+        ref={props.registerSection(props.index)}
+      >
+        <SlideFive show={show} handleClose={handleClose} />
         <article className="slidecard">
           <h1>Release movie and distribute royalties</h1>
           <p>
@@ -25,8 +25,8 @@ const SectionFive = (props) => {
             Learn More
           </button>
         </article>
-      </Parallax>
-    </section>
+      </section>
+    </Parallax>
   );
 };
 
